@@ -4,12 +4,20 @@ Customizable cursor component for any style 🕹️
 
 [Documentation](https://github.com/morethanmin/react-cursorify) | [Demo](https://github.com/morethanmin/react-cursorify)
 
-## Install
+## Getting Started
+
+Install react-cursorify in your React project.
 
 via npm:
 
 ```
 npm install react-cursorify
+```
+
+via yarn:
+
+```
+yarn add react-cursorify
 ```
 
 ## Usage

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { cursorSelectors, initialCursorState } from './useCursorify.constant'
 import { getCursorStateKey } from './useCursorify.module'
 
-type CursorifyOptions = {}
+type UseCursorifyOptions = {}
 
-const useCursorify = (options: CursorifyOptions = {}) => {
+const useCursorify = (options: UseCursorifyOptions = {}) => {
   const [cursorState, setCursorState] = useState(initialCursorState)
   const [currentRoute, setCurrentRoute] = useState('')
   const handleMouseenter = (e: Event) => {
