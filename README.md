@@ -2,7 +2,7 @@
 
 Customizable cursor component for any style 🕹️
 
-[Documentation](https://github.com/morethanmin/react-cursorify) | [Custom Cursors](https://github.com/morethanmin/react-cursorify)
+[Documentation](https://github.com/morethanmin/react-cursorify#getting-started) | [Custom Cursors](https://github.com/morethanmin/react-cursorify#custom-cursors)
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ via yarn:
 yarn add react-cursorify
 ```
 
-### Apply to the project.
+### Applying to your react project.
 
 Just import and apply Cursorify as shown below and you're done! Easy, right?
 
@@ -42,7 +42,7 @@ const App: React.FC = () => {
 export default App
 ```
 
-### Applying Your Own Custom Cursor Component
+### Making Custom Cursor Component
 
 `react-cursorify` defines styles through classname, and can easily create custom components using `useCursorify` hook.
 
@@ -99,7 +99,7 @@ const App: React.FC = () => {
 export default App
 ```
 
-For more details, please refer to the [Documentation](https://github.com/morethanmin/react-cursorify).
+For more details, please refer to the [Documentation](https://github.com/morethanmin/react-cursorify#getting-started).
 
 ## Custom Cursors
 
