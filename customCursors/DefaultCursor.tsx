@@ -1,25 +1,19 @@
 import styled from '@emotion/styled'
-import React, { forwardRef, ForwardRefRenderFunction } from 'react'
+import React from 'react'
 import useCursorify from '../src/useCursorify'
 
-type Props = {}
-
-const DefaultCursor: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-  {},
-  ref
-) => {
+const DefaultCursor: React.FC = () => {
   const { isPointer } = useCursorify()
-  return <StyledWrapper ref={ref} data-pointer={isPointer}></StyledWrapper>
+  return <StyledWrapper data-pointer={isPointer}></StyledWrapper>
 }
 
-export default forwardRef(DefaultCursor)
+export default DefaultCursor
 
 const StyledWrapper = styled.div`
   width: 23px;
   height: 23px;
-  background-color: rgba(224, 224, 224, 0.8);
-  z-index: 99;
   border-radius: 50%;
+  background-color: rgba(224, 224, 224, 0.8);
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
     background-color 0.1s ease-in-out;
   &[data-pointer='true'] {

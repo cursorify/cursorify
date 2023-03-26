@@ -27,10 +27,7 @@ yarn add react-cursorify
 Just import and apply Cursorify as shown below and you're done! Easy, right?
 
 ```tsx
-import React from 'react'
-import { Cursorify } from 'react-cursorify'
-
-const App: React.FC = () => {
+const App = () => {
   return (
     <div>
       <Cursorify />
@@ -51,25 +48,17 @@ Below is a custom cursor component that detects `cursorify-pointer` classname. B
 You can check [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#values) for keywords.
 
 ```tsx
-import React, { forwardRef, ForwardRefRenderFunction } from 'react'
-import useCursorify from './useCursorify'
-import styled from '@emotion/styled'
-
-const DefaultCursor: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-  props,
-  ref
-) => {
+const DefaultCursor = (props) => {
   const { isPointer } = useCursorify()
   return <StyledWrapper ref={ref} data-pointer={isPointer}></StyledWrapper>
 }
 
-export default forwardRef(DefaultCursor)
+export default DefaultCursor
 
 const StyledWrapper = styled.div`
   width: 23px;
   height: 23px;
   background-color: rgba(224, 224, 224, 0.8);
-  z-index: 99;
   border-radius: 50%;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
     background-color 0.1s ease-in-out;
@@ -127,7 +116,7 @@ Sponsors template:
 <a href="https://github.com/{uesrname}"><img src="{src}" width="50px" alt="{username}" /></a>&nbsp;&nbsp;
 -->
 
-.
+none.
 
 ## License
 
