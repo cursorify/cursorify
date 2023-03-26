@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCursorMove, useGlobalStyleEffect } from './Cursorify.module'
 import StyledWrapper from './Cursorify.style'
-import DefaultCursor from './DefaultCursor'
+import DefaultCursor from '../customCursors/DefaultCursor'
 
 type CursorifyProps = {
   cursor?: React.FC
@@ -13,7 +13,9 @@ const Cursorify: React.FC<CursorifyProps> = ({
   delay = 1,
 }) => {
   useGlobalStyleEffect(`
-    cursor: none !important;
+    * {
+      cursor: none !important;
+    }
   `)
   const cursorRef = useCursorMove(delay)
 

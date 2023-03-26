@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React, { forwardRef, ForwardRefRenderFunction } from 'react'
-import useCursorify from './useCursorify'
+import useCursorify from '../src/useCursorify'
 
 type Props = {}
 
