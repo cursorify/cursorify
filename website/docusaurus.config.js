@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'react cursorify',
+  title: 'React Crsorify',
   tagline: 'Customizable cursor component for any style. 🕹️',
   favicon: 'img/favicon.ico',
 
@@ -65,7 +65,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/react-cursorify-social-card.jpg',
       navbar: {
-        title: 'react cursorify',
+        title: 'React Cursorify',
         logo: {
           alt: 'react-cursorify Logo',
           src: 'img/react-cursorify.png',
