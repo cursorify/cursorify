@@ -1,8 +1,8 @@
 # react-cursorify
 
-.
+Customizable cursor component for any style 🕹️
 
-[Demo](https://github.com/morethanmin/react-cursorify)
+[Documentation](https://github.com/morethanmin/react-cursorify) | [Demo](https://github.com/morethanmin/react-cursorify)
 
 ## Install
 
