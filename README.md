@@ -2,7 +2,7 @@
 
 Customizable cursor component for any style 🕹️
 
-[Documentation](https://github.com/morethanmin/react-cursorify#getting-started) | [Custom Cursors](https://github.com/morethanmin/react-cursorify#custom-cursors)
+[Documentation](https://github.com/morethanmin/react-cursorify#getting-started) | [Cursors](https://github.com/morethanmin/react-cursorify#custom-cursors)
 
 ## Getting Started
 
@@ -90,7 +90,7 @@ export default App
 
 For more details, please refer to the [Documentation](https://github.com/morethanmin/react-cursorify#getting-started).
 
-## Custom Cursors
+## Cursors
 
 react-cursorify manages custom cursor components so that they can be shared and used. Please share your cursor component via PR!
 
