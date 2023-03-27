@@ -1,10 +1,21 @@
 import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Cursorify } from 'react-cursorify'
+import { Global } from '@emotion/react'
 
-function App() {
+import { routes } from '@routes/index'
+import { globalStyles } from '@styles/global'
+import { Layout } from '@components/Layout'
+
+const App: React.FC = () => {
+  const router = createBrowserRouter(routes)
+
   return (
-    <div>
-      <div>test</div>
-    </div>
+    <Layout>
+      <Cursorify />
+      <Global styles={globalStyles} />
+      <RouterProvider router={router} />
+    </Layout>
   )
 }
 
