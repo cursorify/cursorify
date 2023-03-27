@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      {/* <Cursorify /> */}
+      <Cursorify />
       <Global styles={globalStyles} />
       <RouterProvider router={router} />
     </>

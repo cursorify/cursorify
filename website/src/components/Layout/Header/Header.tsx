@@ -1,12 +1,14 @@
 import styled from '@emotion/styled'
 import OpenColor from 'open-color'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { AiFillGithub } from 'react-icons/ai'
 
 type Props = {}
 
 const Header: React.FC<Props> = () => {
+  const location = useLocation()
+
   return (
     <StyledWrapper>
       <div className="lt">
@@ -14,14 +16,25 @@ const Header: React.FC<Props> = () => {
           🕹️ React Cursorify
         </Link>
         <nav>
-          {/* active시 primary color */}
-          <Link className="menu cursorify-pointer" to={'/'}>
-            Home
+          <Link
+            className="menu cursorify-pointer"
+            data-active={location.pathname === '/docs'}
+            to={'/docs'}
+          >
+            Docs
           </Link>
-          <Link className="menu cursorify-pointer" to={'/cursor'}>
+          <Link
+            className="menu cursorify-pointer"
+            data-active={location.pathname === '/cursor'}
+            to={'/cursor'}
+          >
             Cursor
           </Link>
-          <Link className="menu cursorify-pointer" to={'/playground'}>
+          <Link
+            className="menu cursorify-pointer"
+            data-active={location.pathname === '/playground'}
+            to={'/playground'}
+          >
             Playground
           </Link>
         </nav>
@@ -66,6 +79,10 @@ const StyledWrapper = styled.div`
       .menu {
         color: ${OpenColor.gray[9]};
         text-decoration: none;
+        font-weight: 400;
+        &[data-active='true'] {
+          color: ${OpenColor.violet[9]};
+        }
       }
     }
   }
