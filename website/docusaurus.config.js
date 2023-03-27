@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'React Crsorify',
-  tagline: 'Customizable cursor component for any style. 🕹️',
+  tagline: 'Customizable cursor component for any style',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -71,15 +71,8 @@ const config = {
           src: 'img/react-cursorify.png',
         },
         items: [
-          // active issue
-          // { to: '/', label: 'Home', position: 'left' },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Docs',
-          },
-          { to: '/blog', label: 'Cursors', position: 'left' },
+          { to: '/cursors', label: 'Cursor', position: 'left' },
+          { to: '/playground', label: 'Playground', position: 'left' },
           {
             href: 'https://github.com/morethanmin/react-cursorify',
             label: 'GitHub',
