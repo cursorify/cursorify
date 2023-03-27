@@ -5,17 +5,16 @@ import { Global } from '@emotion/react'
 
 import { routes } from '@routes/index'
 import { globalStyles } from '@styles/global'
-import { Layout } from '@components/Layout'
 
 const App: React.FC = () => {
   const router = createBrowserRouter(routes)
 
   return (
-    <Layout>
-      <Cursorify />
+    <>
+      {/* <Cursorify /> */}
       <Global styles={globalStyles} />
       <RouterProvider router={router} />
-    </Layout>
+    </>
   )
 }
 

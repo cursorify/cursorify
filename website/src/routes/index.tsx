@@ -4,24 +4,45 @@ import { Home } from '@routes/Home'
 import { Cursor } from '@routes/Cursor'
 import { Playground } from '@routes/Playground'
 import { NotFound } from './NotFound'
+import { Layout } from '@components/Layout'
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Home />,
+    element: (
+      <Layout>
+        <Home />
+      </Layout>
+    ),
   },
   {
     path: '/cursor',
-    element: <Cursor />,
+    element: (
+      <Layout>
+        <Cursor />
+      </Layout>
+    ),
   },
   {
     path: '/playground',
-    element: <Playground />,
+    element: (
+      <Layout>
+        <Playground />
+      </Layout>
+    ),
   },
   {
     path: '*',
-    errorElement: <NotFound />,
-    element: <NotFound />,
+    errorElement: (
+      <Layout>
+        <NotFound />
+      </Layout>
+    ),
+    element: (
+      <Layout>
+        <NotFound />
+      </Layout>
+    ),
   },
 ]
 
