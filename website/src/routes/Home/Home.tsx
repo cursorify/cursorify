@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import OpenColor from 'open-color'
 import React from 'react'
 
+// todo mac window 창 처럼 표시해서 interactive하게 구현해보기
 const Home: React.FC = () => {
   return (
     <StyledWrapper>
