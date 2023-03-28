@@ -87,7 +87,7 @@ const StyledWrapper = styled.div`
         display: flex;
         justify-content: center;
         gap: 80px;
-        padding: 70px 0;
+        padding: 50px 0 60px;
         .feature {
           color: ${OpenColor.gray[4]};
           width: 200px;
@@ -96,7 +96,7 @@ const StyledWrapper = styled.div`
           text-align: center;
           gap: 10px;
           .svg-wrapper {
-            background-color: ${OpenColor.gray[4]};
+            background-color: ${OpenColor.gray[3]};
             padding: 15px;
             border-radius: 12px;
             width: 200px;

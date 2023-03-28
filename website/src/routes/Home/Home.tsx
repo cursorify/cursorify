@@ -80,7 +80,12 @@ const Home: React.FC = () => {
           </div>
 
           {/* cursor control section */}
-          {/* delay, size, opacity, cursor component */}
+          {/* 
+          cursor component mac scroll style
+          delay, 
+          size, 
+          opacity 
+          */}
         </div>
       </main>
       <Footer />
