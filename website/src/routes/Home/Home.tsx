@@ -48,6 +48,7 @@ const Home: React.FC = () => {
               style of the mouse cursor in a React project.
             </div>
           </div>
+          {/* feature가 필요한가? */}
           <div className="features">
             <div className="feature">
               <div className="svg-wrapper">
@@ -78,7 +79,7 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
-
+          ` {/* mouse component 선택 */}
           {/* cursor control section */}
           {/* 
           cursor component mac scroll style
