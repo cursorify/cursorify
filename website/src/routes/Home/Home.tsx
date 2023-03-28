@@ -1,9 +1,13 @@
-import styled from '@emotion/styled'
-import OpenColor from 'open-color'
+import { Footer } from '@components/Footer'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import StyledWrapper from './Home.style'
+import Community from './svgs/Community'
+import Declarative from './svgs/Declarative'
+import EasyToUse from './svgs/EasyToUse'
 
-// todo mac window 창 처럼 표시해서 interactive하게 구현해보기
 const Home: React.FC = () => {
+  const navigate = useNavigate()
   return (
     <StyledWrapper>
       <div className="header">
@@ -12,38 +16,76 @@ const Home: React.FC = () => {
         <div className="description">
           Customizable cursor component in react project
         </div>
-        <div className="buttons cursorify-pointer">
-          <button>Get Started</button>
+        <div className="buttons">
+          <button
+            className="cursorify-pointer"
+            onClick={() => navigate('/docs')}
+          >
+            Get Started
+          </button>
+          <button
+            className="cursorify-pointer"
+            onClick={() => navigate('/cursor')}
+          >
+            Cursors
+          </button>
         </div>
       </div>
+      <main>
+        <div className="window">
+          <div className="header">
+            <div className="lt">
+              <div className="btn cursorify-pointer" data-type="close"></div>
+              <div className="btn cursorify-pointer" data-type="minimize"></div>
+              <div className="btn cursorify-pointer" data-type="maximize"></div>
+            </div>
+            {/* <div className="rt">🕹️</div> */}
+          </div>
+          <div className="title">
+            <h2>Easily customize your mouse cursor! 🎉</h2>
+            <div className="description">
+              React Cursorify is a library that helps you easily change the
+              style of the mouse cursor in a React project.
+            </div>
+          </div>
+          <div className="features">
+            <div className="feature">
+              <div className="svg-wrapper">
+                <EasyToUse />
+              </div>
+              <h4 className="title">Easy to use</h4>
+              <div className="description">
+                React Cursorify is designed to be user-friendly and easy to use.
+              </div>
+            </div>
+            <div className="feature">
+              <div className="svg-wrapper">
+                <Community />
+              </div>
+              <div className="title">Community friendly</div>
+              <div className="description">
+                React Cursorify is built with a focus on fostering a friendly
+                and supportive community.
+              </div>
+            </div>
+            <div className="feature">
+              <div className="svg-wrapper">
+                <Declarative />
+              </div>
+              <div className="title">Declarative</div>
+              <div className="description">
+                Simplifying programming with a declarative approach.
+              </div>
+            </div>
+          </div>
+
+          {/* cursor control section */}
+          {/* delay, size, opacity, cursor component */}
+        </div>
+      </main>
+      <Footer />
     </StyledWrapper>
   )
 }
 
 export default Home
-
-const StyledWrapper = styled.div`
-  .header {
-    background-color: ${OpenColor.violet[9]};
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    gap: 10px;
-    .description {
-      margin-top: 10px;
-      font-size: 1.4rem;
-    }
-    .buttons {
-      display: flex;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      button {
-        color: ${OpenColor.gray[8]};
-      }
-    }
-  }
-`

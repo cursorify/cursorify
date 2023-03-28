@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Footer } from './Footer'
 import { Header } from './Header'
 
 type Props = {
@@ -12,7 +11,6 @@ const Layout: React.FC<Props> = ({ children }) => {
     <StyledWrapper>
       <Header />
       <main>{children}</main>
-      <Footer />
     </StyledWrapper>
   )
 }
@@ -22,5 +20,7 @@ export default Layout
 const StyledWrapper = styled.div`
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `

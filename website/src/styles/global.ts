@@ -5,12 +5,12 @@ export const globalStyles = css`
   html {
     font-family: Pretendard, Roboto, sans-serif;
     background-color: #f8f9fa;
-    color: #212529;
   }
 
   body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
   }
   * {
     padding: 0;
@@ -30,5 +30,8 @@ export const globalStyles = css`
     font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
+    &:hover {
+      background-color: ${OpenColor.gray[2]};
+    }
   }
 `
