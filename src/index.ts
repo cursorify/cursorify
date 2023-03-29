@@ -1,3 +1,3 @@
-export { default as Cursorify } from './Cursorify'
-export { default as useCursorify } from './useCursorify'
-export { default as DefaultCursor } from '../examples/DefaultCursor'
+export * from './Cursorify'
+export * from './useCursorify'
+export * from './cursors'

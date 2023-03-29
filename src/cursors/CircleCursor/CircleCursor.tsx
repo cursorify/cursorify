@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import useCursorify from '../src/useCursorify'
+import { useCursorify } from '../../useCursorify'
 
 const DefaultCursor: React.FC = () => {
   const { isPointer } = useCursorify()
