@@ -1,2 +1,2 @@
 export * from './CircleCursor'
-export * from './PhingerCursors'
+export * from './PhingerCursor'
