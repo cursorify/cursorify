@@ -117,6 +117,45 @@ const StyledWrapper = styled.div`
           }
         }
       }
+      .cursors {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding: 50px 0 60px;
+        .cursor {
+          color: ${OpenColor.gray[4]};
+          width: 140px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+          .svg-wrapper {
+            background-color: ${OpenColor.gray[7]};
+            padding: 15px;
+            border-radius: 12px;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              margin-left: 35px;
+              margin-top: 10px;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .title {
+            font-weight: 300;
+            color: ${OpenColor.gray[1]};
+            margin-top: 10px;
+          }
+          .description {
+            color: ${OpenColor.gray[5]};
+            font-weight: 200;
+          }
+        }
+      }
     }
   }
 `

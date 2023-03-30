@@ -49,7 +49,7 @@ const Home: React.FC = () => {
             </div>
           </div>
           {/* feature가 필요한가? */}
-          <div className="features">
+          {/* <div className="features">
             <div className="feature">
               <div className="svg-wrapper">
                 <EasyToUse />
@@ -77,6 +77,26 @@ const Home: React.FC = () => {
               <div className="description">
                 Simplifying programming with a declarative approach.
               </div>
+            </div>
+          </div> */}
+          <div className="cursors">
+            <div className="cursor cursorify-pointer">
+              <div className="svg-wrapper">
+                <img src="/svg/CircleCursor.svg" alt="" />
+              </div>
+              <h4 className="title">Circle</h4>
+            </div>
+            <div className="cursor cursorify-pointer">
+              <div className="svg-wrapper">
+                <img src="/svg/CircleCursor.svg" alt="" />
+              </div>
+              <h4 className="title">Phinger</h4>
+            </div>
+            <div className="cursor cursorify-pointer">
+              <div className="svg-wrapper">
+                <img src="/svg/CircleCursor.svg" alt="" />
+              </div>
+              <h4 className="title">Emoji</h4>
             </div>
           </div>
           ` {/* mouse component 선택 */}
