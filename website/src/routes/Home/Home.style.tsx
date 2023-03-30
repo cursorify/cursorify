@@ -139,8 +139,9 @@ const StyledWrapper = styled.div`
             justify-content: center;
             align-items: center;
             img {
-              margin-left: 35px;
+              margin-left: 30px;
               margin-top: 10px;
+              padding: 10px;
               width: 100%;
               height: 100%;
             }

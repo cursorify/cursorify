@@ -4,11 +4,13 @@ import { useCursorify } from 'react-cursorify'
 
 const EmojiCursor: React.FC = () => {
   const { isPointer } = useCursorify()
+
   return (
-    <StyledWrapper data-pointer={isPointer}>
+    <StyledWrapper data-pointer={isPointer} {...{ a: 1 }}>
       {(() => {
-        if (isPointer) return '☝️'
-        return '🖱️'
+        // if(mouseState)
+        if (isPointer) return '🖐️'
+        return '👆'
       })()}
     </StyledWrapper>
   )

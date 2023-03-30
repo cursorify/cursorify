@@ -13,7 +13,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Cursorify cursor={EmojiCursor} />
+      <Cursorify cursor={PhingerCursor} />
       <Global styles={globalStyles} />
       <RouterProvider router={router} />
     </>
