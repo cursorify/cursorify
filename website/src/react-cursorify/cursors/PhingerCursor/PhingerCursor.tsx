@@ -1,6 +1,6 @@
+import { useCursorify } from '@/react-cursorify/useCursorify'
 import styled from '@emotion/styled'
 import React from 'react'
-import { useCursorify } from 'react-cursorify'
 import Default from './svgs/light/Default'
 import Pointer from './svgs/light/Pointer'
 

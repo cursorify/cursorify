@@ -4,9 +4,7 @@ import { Global } from '@emotion/react'
 
 import { routes } from '@routes/index'
 import { globalStyles } from '@styles/global'
-import { Cursorify } from 'react-cursorify'
-import { PhingerCursor } from './cursors/PhingerCursor'
-import { EmojiCursor } from './cursors/EmojiCursor'
+import { Cursorify, PhingerCursor } from './react-cursorify'
 
 const App: React.FC = () => {
   const router = createBrowserRouter(routes)
