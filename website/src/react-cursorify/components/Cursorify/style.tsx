@@ -10,4 +10,4 @@ const StyledWrapper = styled.div`
   opacity: 0;
 `
 
-export default StyledWrapper
+export { StyledWrapper }

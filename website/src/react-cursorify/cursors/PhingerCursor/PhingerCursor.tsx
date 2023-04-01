@@ -1,15 +1,15 @@
-import { useCursorify } from '@/react-cursorify/useCursorify'
+import useCursorify from '@/react-cursorify/hooks/useCursorify'
 import styled from '@emotion/styled'
 import React from 'react'
 import Default from './svgs/light/Default'
 import Pointer from './svgs/light/Pointer'
 
 const PhingerCursor: React.FC = () => {
-  const { isPointer } = useCursorify()
+  const { hoverState } = useCursorify()
   return (
-    <StyledWrapper data-pointer={isPointer}>
+    <StyledWrapper data-hover={hoverState}>
       {(() => {
-        if (isPointer) return <Pointer />
+        if (hoverState) return <Pointer />
         return <Default />
       })()}
     </StyledWrapper>

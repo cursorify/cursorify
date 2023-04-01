@@ -1,15 +1,15 @@
+import useCursorify from '@/react-cursorify/hooks/useCursorify'
 import styled from '@emotion/styled'
 import React from 'react'
-import { useCursorify } from '@/react-cursorify/useCursorify'
 
 const EmojiCursor: React.FC = () => {
-  const { isPointer } = useCursorify()
+  const { hoverState } = useCursorify()
 
   return (
-    <StyledWrapper data-pointer={isPointer} {...{ a: 1 }}>
+    <StyledWrapper data-hover={hoverState} {...{ a: 1 }}>
       {(() => {
         // if(mouseState)
-        if (isPointer) return '🖐️'
+        if (hoverState === 'pointer') return '🖐️'
         return '👆'
       })()}
     </StyledWrapper>
