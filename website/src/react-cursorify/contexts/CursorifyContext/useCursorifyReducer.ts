@@ -17,6 +17,11 @@ const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
         ...state,
         mouseState: action.payload,
       }
+    case 'CHANGE_CURSOR':
+      return {
+        ...state,
+        cursor: action.payload,
+      }
     default:
       return state
   }

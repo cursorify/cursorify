@@ -5,4 +5,6 @@ export const defaultCursorifyState: CusorifyStateType = {
   hoverState: 'default',
   mouseState: 'default',
   cursor: CircleCursor,
+  delay: 1,
+  opacity: 1,
 }

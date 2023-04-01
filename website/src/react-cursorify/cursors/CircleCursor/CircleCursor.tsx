@@ -4,6 +4,8 @@ import React from 'react'
 
 const DefaultCursor: React.FC = () => {
   const { hoverState } = useCursorify()
+  console.log(hoverState)
+
   return <StyledWrapper data-hover={hoverState}></StyledWrapper>
 }
 
@@ -16,7 +18,7 @@ const StyledWrapper = styled.div`
   background-color: rgba(224, 224, 224, 0.8);
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
     background-color 0.1s ease-in-out;
-  &[data-pointer='pointer'] {
+  &[data-hover='pointer'] {
     transform: scale(2.3);
     background-color: rgba(224, 224, 224, 0.4);
   }

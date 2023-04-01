@@ -9,7 +9,7 @@ const PhingerCursor: React.FC = () => {
   return (
     <StyledWrapper data-hover={hoverState}>
       {(() => {
-        if (hoverState) return <Pointer />
+        if (hoverState === 'pointer') return <Pointer />
         return <Default />
       })()}
     </StyledWrapper>
@@ -23,7 +23,7 @@ const StyledWrapper = styled.div`
   height: 24px;
   margin-top: 24px;
   margin-left: 24px;
-  &[data-pointer='true'] {
+  &[data-hover='true'] {
     margin-top: 12px;
     margin-left: 12px;
   }

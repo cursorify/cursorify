@@ -4,13 +4,8 @@ import useMouseRef from './hooks/useMouseRef'
 import useGlobalStyleEffect from './hooks/useGlobalStyleEffect'
 import { useCursorifyState } from '../../contexts/CursorifyContext/CursorifyContext'
 
-type CursorifyProps = {
-  delay?: number
-  children?: ReactNode
-}
-
-const Cursorify: React.FC<CursorifyProps> = ({ delay = 1 }) => {
-  const { cursor: Cursor } = useCursorifyState()
+const Cursorify: React.FC = () => {
+  const { cursor: Cursor, delay, opacity } = useCursorifyState()
   const cursorRef = useMouseRef(delay)
   useGlobalStyleEffect(`
     * {

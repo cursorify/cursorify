@@ -3,37 +3,41 @@ import OpenColor from 'open-color'
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AiFillGithub } from 'react-icons/ai'
+import { useRegisterHover } from '@/react-cursorify'
 
 type Props = {}
 
 const Header: React.FC<Props> = () => {
   const location = useLocation()
-
+  const register = useRegisterHover()
   return (
     <StyledWrapper>
       <div className="lt">
-        <Link className="logo cursorify-pointer" to={'/'}>
+        <Link className="logo" to={'/'} {...register('pointer')}>
           🕹️ React Cursorify
         </Link>
         <nav>
           <Link
-            className="menu cursorify-pointer"
+            className="menu"
             data-active={location.pathname === '/docs'}
             to={'/docs'}
+            {...register('pointer')}
           >
             Docs
           </Link>
           <Link
-            className="menu cursorify-pointer"
+            className="menu"
             data-active={location.pathname === '/cursor'}
             to={'/cursor'}
+            {...register('pointer')}
           >
             Cursor
           </Link>
           <Link
-            className="menu cursorify-pointer"
+            className="menu"
             data-active={location.pathname === '/playground'}
             to={'/playground'}
+            {...register('pointer')}
           >
             Playground
           </Link>
@@ -41,10 +45,10 @@ const Header: React.FC<Props> = () => {
       </div>
       <div className="rt">
         <a
-          className="cursorify-pointer"
           href="https://github.com/morethanmin/react-cursorify"
           rel="noreferrer"
           target="_blank"
+          {...register('pointer')}
         >
           <AiFillGithub />
         </a>

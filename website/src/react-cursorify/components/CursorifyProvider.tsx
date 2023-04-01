@@ -3,16 +3,12 @@ import { CursorifyContext } from '../contexts/CursorifyContext/CursorifyContext'
 import { Cursorify } from './Cursorify'
 
 type CursorifyProviderProps = {
-  delay?: number
   children?: ReactNode
 }
 
-const CursorifyProvider: React.FC<CursorifyProviderProps> = ({
-  children,
-  ...props
-}) => (
+const CursorifyProvider: React.FC<CursorifyProviderProps> = ({ children }) => (
   <CursorifyContext>
-    <Cursorify {...props} />
+    <Cursorify />
     {children}
   </CursorifyContext>
 )

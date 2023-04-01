@@ -1,3 +1,9 @@
+import { useChangeCursor, useRegisterHover } from '@/react-cursorify'
+import {
+  CircleCursor,
+  EmojiCursor,
+  PhingerCursor,
+} from '@/react-cursorify/cursors'
 import { Footer } from '@components/Footer'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +14,8 @@ import EasyToUse from './svgs/EasyToUse'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
+  const register = useRegisterHover()
+  const changeCursor = useChangeCursor()
   return (
     <StyledWrapper>
       <div className="header">
@@ -17,16 +25,10 @@ const Home: React.FC = () => {
           Customizable cursor component in react project
         </div>
         <div className="buttons">
-          <button
-            className="cursorify-pointer"
-            onClick={() => navigate('/docs')}
-          >
+          <button onClick={() => navigate('/docs')} {...register('pointer')}>
             Get Started
           </button>
-          <button
-            className="cursorify-pointer"
-            onClick={() => navigate('/cursor')}
-          >
+          <button onClick={() => navigate('/cursor')} {...register('pointer')}>
             Cursors
           </button>
         </div>
@@ -35,9 +37,21 @@ const Home: React.FC = () => {
         <div className="window">
           <div className="header">
             <div className="lt">
-              <div className="btn cursorify-pointer" data-type="close"></div>
-              <div className="btn cursorify-pointer" data-type="minimize"></div>
-              <div className="btn cursorify-pointer" data-type="maximize"></div>
+              <div
+                className="btn"
+                data-type="close"
+                {...register('pointer')}
+              ></div>
+              <div
+                className="btn"
+                data-type="minimize"
+                {...register('pointer')}
+              ></div>
+              <div
+                className="btn"
+                data-type="maximize"
+                {...register('pointer')}
+              ></div>
             </div>
             {/* <div className="rt">🕹️</div> */}
           </div>
@@ -80,19 +94,31 @@ const Home: React.FC = () => {
             </div>
           </div> */}
           <div className="cursors">
-            <div className="cursor cursorify-pointer">
+            <div
+              className="cursor"
+              onClick={() => changeCursor(CircleCursor)}
+              {...register('pointer')}
+            >
               <div className="svg-wrapper">
                 <img src="/svg/CircleCursor.svg" alt="" />
               </div>
               <h4 className="title">Circle</h4>
             </div>
-            <div className="cursor cursorify-pointer">
+            <div
+              className="cursor"
+              onClick={() => changeCursor(PhingerCursor)}
+              {...register('pointer')}
+            >
               <div className="svg-wrapper">
                 <img src="/svg/CircleCursor.svg" alt="" />
               </div>
               <h4 className="title">Phinger</h4>
             </div>
-            <div className="cursor cursorify-pointer">
+            <div
+              className="cursor"
+              onClick={() => changeCursor(EmojiCursor)}
+              {...register('pointer')}
+            >
               <div className="svg-wrapper">
                 <img src="/svg/CircleCursor.svg" alt="" />
               </div>
