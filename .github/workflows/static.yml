@@ -24,8 +24,6 @@ jobs:
         with:
           node-version: 16
           # cache: 'npm'
-
-      - run: cd website
       - run: npm ci --legacy-peer-deps
       - run: npm run build
         env:
