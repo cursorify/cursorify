@@ -3,17 +3,20 @@ name: Deploy React with Github Actions
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [main]
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: './website'
     steps:
       - uses: actions/checkout@v3
       - uses: actions/configure-pages@v2
@@ -21,7 +24,7 @@ jobs:
         with:
           node-version: 16
           # cache: 'npm'
-        
+
       - run: cd website
       - run: npm ci --legacy-peer-deps
       - run: npm run build
