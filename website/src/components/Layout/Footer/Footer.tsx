@@ -1,3 +1,4 @@
+import { useRegisterHover } from '@/react-cursorify'
 import styled from '@emotion/styled'
 import OpenColor from 'open-color'
 import React from 'react'
@@ -5,9 +6,21 @@ import React from 'react'
 type Props = {}
 
 const Footer: React.FC<Props> = () => {
+  const register = useRegisterHover()
   return (
     <StyledWrapper>
-      <div>Copyright © 2023 morethanmin.</div>
+      <div>
+        Copyright © 2023{' '}
+        <a
+          href="https://github.com/morethanmin"
+          target="_blank"
+          rel="noreferrer"
+          {...register('pointer')}
+        >
+          morethanmin
+        </a>
+        .
+      </div>
     </StyledWrapper>
   )
 }

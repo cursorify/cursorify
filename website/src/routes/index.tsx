@@ -5,6 +5,7 @@ import { Cursor } from '@routes/Cursor'
 import { Playground } from '@routes/Playground'
 import { NotFound } from './NotFound'
 import { Layout } from '@components/Layout'
+import { Docs } from './Docs'
 
 const routes: RouteObject[] = [
   {
@@ -12,6 +13,14 @@ const routes: RouteObject[] = [
     element: (
       <Layout>
         <Home />
+      </Layout>
+    ),
+  },
+  {
+    path: '/docs',
+    element: (
+      <Layout>
+        <Docs />
       </Layout>
     ),
   },

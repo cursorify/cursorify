@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Header } from './Header'
 import { Footer } from './Footer'
+import { CursorifyProvider } from '@/react-cursorify'
 
 type Props = {
   children?: React.ReactNode
@@ -9,11 +10,13 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <StyledWrapper>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </StyledWrapper>
+    <CursorifyProvider>
+      <StyledWrapper>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </StyledWrapper>
+    </CursorifyProvider>
   )
 }
 

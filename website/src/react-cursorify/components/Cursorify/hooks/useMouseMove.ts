@@ -17,7 +17,6 @@ const useMouseMove = (delay: number) => {
       _x.current += (endX.current - _x.current) / delay
       _y.current += (endY.current - _y.current) / delay
     }
-    console.log(_y.current, _x.current)
     mouseRef.current.style.transform = `translate(-50%, -50%) translate3d(${_x.current}px, ${_y.current}px, 0)`
 
     requestRef.current = requestAnimationFrame(animateMouse)
