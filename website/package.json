@@ -1,6 +1,7 @@
 {
   "name": "website",
   "version": "0.1.0",
+  "homepage": "https://morethanmin.github.io/react-cursorify",
   "private": true,
   "scripts": {
     "start": "craco start",
