@@ -1,12 +1,14 @@
-import React, { ReactNode } from 'react'
+import React, { useState } from 'react'
 import { StyledWrapper } from './style'
-import useMouseRef from './hooks/useMouseRef'
+import useMouseMove from './hooks/useMouseMove'
 import useGlobalStyleEffect from './hooks/useGlobalStyleEffect'
 import { useCursorifyState } from '../../contexts/CursorifyContext/CursorifyContext'
+import useMouseStateEffect from './hooks/useMouseStateEffect'
 
 const Cursorify: React.FC = () => {
   const { cursor: Cursor, delay, opacity } = useCursorifyState()
-  const cursorRef = useMouseRef(delay)
+  const mouseRef = useMouseMove(delay)
+  useMouseStateEffect()
   useGlobalStyleEffect(`
     * {
       cursor: none !important;
@@ -14,7 +16,7 @@ const Cursorify: React.FC = () => {
   `)
 
   return (
-    <StyledWrapper ref={cursorRef}>
+    <StyledWrapper ref={mouseRef}>
       <Cursor />
     </StyledWrapper>
   )

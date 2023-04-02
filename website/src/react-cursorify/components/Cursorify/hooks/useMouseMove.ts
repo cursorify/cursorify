@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-const useMouseRef = (delay: number) => {
+const useMouseMove = (delay: number) => {
   const endX = useRef(0)
   const endY = useRef(0)
 
@@ -17,9 +17,8 @@ const useMouseRef = (delay: number) => {
       _x.current += (endX.current - _x.current) / delay
       _y.current += (endY.current - _y.current) / delay
     }
-
-    mouseRef.current.style.top = `${_y.current}px`
-    mouseRef.current.style.left = `${_x.current}px`
+    console.log(_y.current, _x.current)
+    mouseRef.current.style.transform = `translate(-50%, -50%) translate3d(${_x.current}px, ${_y.current}px, 0)`
 
     requestRef.current = requestAnimationFrame(animateMouse)
   }
@@ -28,14 +27,14 @@ const useMouseRef = (delay: number) => {
     if (mouseRef.current === null) return
     mouseRef.current.style.opacity = '1'
 
-    endX.current = e.pageX
-    endY.current = e.pageY
+    endX.current = e.clientX
+    endY.current = e.clientY
 
     if (_x.current === null || _y.current === null) {
       _x.current = endX.current
       _y.current = endY.current
-      mouseRef.current.style.top = `${_y.current}px`
-      mouseRef.current.style.left = `${_x.current}px`
+
+      mouseRef.current.style.transform = `translate(-50%, -50%) translate3d(${_x.current}px, ${_y.current}px, 0)`
     }
   }
 
@@ -52,4 +51,4 @@ const useMouseRef = (delay: number) => {
   return mouseRef
 }
 
-export default useMouseRef
+export default useMouseMove

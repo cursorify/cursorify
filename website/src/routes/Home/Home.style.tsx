@@ -39,7 +39,6 @@ const StyledWrapper = styled.div`
       border: 1px solid ${OpenColor.gray[8]};
       width: 100%;
       max-width: 1020px;
-      overflow: hidden;
       > .header {
         display: flex;
         justify-content: space-between;
@@ -67,93 +66,117 @@ const StyledWrapper = styled.div`
         .rt {
         }
       }
-      > .title {
-        display: flex;
-        flex-direction: column;
-        color: white;
-        align-items: center;
-        padding: 50px 0 30px;
-        gap: 15px;
-        h2 {
-          font-weight: 500;
-          color: ${OpenColor.gray[1]};
-        }
-        .description {
-          color: ${OpenColor.gray[5]};
-          font-weight: 200;
-        }
-      }
-      .features {
-        display: flex;
-        justify-content: center;
-        gap: 80px;
-        padding: 50px 0 60px;
-        .feature {
-          color: ${OpenColor.gray[4]};
-          width: 200px;
+      .content {
+        padding: 50px 0 70px;
+        > .title {
           display: flex;
           flex-direction: column;
-          text-align: center;
-          gap: 10px;
-          .svg-wrapper {
-            background-color: ${OpenColor.gray[3]};
-            padding: 15px;
-            border-radius: 12px;
+          color: white;
+          align-items: center;
+          padding-bottom: 30px;
+          gap: 15px;
+          h2 {
+            font-weight: 500;
+            color: ${OpenColor.gray[1]};
+          }
+          .description {
+            color: ${OpenColor.gray[5]};
+            font-weight: 200;
+            text-align: center;
+          }
+        }
+        .features {
+          display: flex;
+          justify-content: center;
+          gap: 80px;
+          padding: 50px 0 60px;
+          .feature {
+            color: ${OpenColor.gray[4]};
             width: 200px;
-            height: 140px;
-            svg {
-              width: 100%;
-              height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            .svg-wrapper {
+              background-color: ${OpenColor.gray[3]};
+              padding: 15px;
+              border-radius: 12px;
+              width: 200px;
+              height: 140px;
+              svg {
+                width: 100%;
+                height: 100%;
+              }
             }
-          }
-          .title {
-            font-weight: 300;
-            color: ${OpenColor.gray[1]};
-            margin-top: 10px;
-          }
-          .description {
-            color: ${OpenColor.gray[5]};
-            font-weight: 200;
+            .title {
+              font-weight: 300;
+              color: ${OpenColor.gray[1]};
+              margin-top: 10px;
+            }
+            .description {
+              color: ${OpenColor.gray[5]};
+              font-weight: 200;
+            }
           }
         }
-      }
-      .cursors {
-        display: flex;
-        justify-content: center;
-        gap: 80px;
-        padding: 50px 0 60px;
-        .cursor {
-          color: ${OpenColor.gray[4]};
-          width: 140px;
+        .cursors {
           display: flex;
-          flex-direction: column;
-          text-align: center;
-          gap: 10px;
-          .svg-wrapper {
-            background-color: ${OpenColor.gray[7]};
-            padding: 15px;
-            border-radius: 12px;
-            width: 140px;
-            height: 140px;
+          justify-content: center;
+          gap: 80px;
+          padding: 50px 0 60px;
+          .cursor {
+            color: ${OpenColor.gray[4]};
+            width: 100px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-              margin-left: 30px;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            .cursor-wrapper {
+              background-color: ${OpenColor.gray[7]};
+              padding: 15px;
+              border-radius: 12px;
+              width: 100px;
+              height: 100px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &.phinger {
+                > * {
+                  margin-right: 12px;
+                  margin-bottom: 20px;
+                }
+              }
+            }
+            .title {
+              font-weight: 300;
+              color: ${OpenColor.gray[1]};
               margin-top: 10px;
-              padding: 10px;
-              width: 100%;
-              height: 100%;
+            }
+            .description {
+              color: ${OpenColor.gray[5]};
+              font-weight: 200;
             }
           }
-          .title {
-            font-weight: 300;
-            color: ${OpenColor.gray[1]};
-            margin-top: 10px;
-          }
-          .description {
-            color: ${OpenColor.gray[5]};
-            font-weight: 200;
+        }
+        .options {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding-top: 40px;
+          color: ${OpenColor.gray[2]};
+          .option {
+            display: flex;
+            align-items: center;
+            .label {
+              width: 70px;
+            }
+            input {
+              width: 300px;
+            }
+            .value {
+              margin-left: 20px;
+            }
           }
         }
       }

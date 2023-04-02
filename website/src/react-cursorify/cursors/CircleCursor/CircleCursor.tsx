@@ -4,7 +4,6 @@ import React from 'react'
 
 const DefaultCursor: React.FC = () => {
   const { hoverState } = useCursorify()
-  console.log(hoverState)
 
   return <StyledWrapper data-hover={hoverState}></StyledWrapper>
 }

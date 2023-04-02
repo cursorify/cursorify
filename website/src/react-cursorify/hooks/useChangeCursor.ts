@@ -1,7 +1,6 @@
 import { useCursorifyDispatch } from '../contexts'
 import { CursorState } from '../types'
 
-// 마우스 변경 함수를 내보낸다.
 const useChangeCursor = () => {
   const dispatch = useCursorifyDispatch()
   const changeCursor = (cursor: CursorState) => {

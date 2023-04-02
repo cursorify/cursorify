@@ -3,9 +3,9 @@ import styled from '@emotion/styled'
 const StyledWrapper = styled.div`
   z-index: 9999;
   pointer-events: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
   transform: translate(-50%, -50%);
   opacity: 0;
 `

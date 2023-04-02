@@ -9,8 +9,10 @@ const EmojiCursor: React.FC = () => {
     <StyledWrapper data-hover={hoverState} {...{ a: 1 }}>
       {(() => {
         // if(mouseState)
-        if (hoverState === 'pointer') return '🖐️'
-        return '👆'
+        if (hoverState === 'pointer') return '👆'
+        if (hoverState === 'text') return '✍️'
+
+        return '🖐️'
       })()}
     </StyledWrapper>
   )
@@ -19,7 +21,7 @@ const EmojiCursor: React.FC = () => {
 export default EmojiCursor
 
 const StyledWrapper = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   font-size: 30px;
 `
