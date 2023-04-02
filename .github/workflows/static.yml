@@ -12,12 +12,11 @@ concurrency:
 
 jobs:
   # Build job
-  defaults:
-    run:
-      working-directory: './website'
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: './website'
     steps:
       - uses: actions/checkout@v3
       - uses: actions/configure-pages@v2
@@ -38,6 +37,9 @@ jobs:
   # Deploy job
   deploy:
     needs: build
+    defaults:
+      run:
+        working-directory: './website'
     permissions:
       pages: write
       id-token: write
