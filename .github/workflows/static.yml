@@ -9,7 +9,6 @@ on:
 concurrency:
   group: 'pages'
   cancel-in-progress: true
-
 jobs:
   # Build job
   build:
@@ -32,14 +31,11 @@ jobs:
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'build/'
+          path: 'website/build/'
 
   # Deploy job
   deploy:
     needs: build
-    defaults:
-      run:
-        working-directory: './website'
     permissions:
       pages: write
       id-token: write
