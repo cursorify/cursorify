@@ -31,7 +31,7 @@ const StyledWrapper = styled.footer`
   display: flex;
   justify-content: center;
   padding: 50px;
-  background-color: ${OpenColor.gray[1]};
+  background-color: ${OpenColor.gray[0]};
   color: ${OpenColor.gray[9]};
   font-weight: 200;
 `

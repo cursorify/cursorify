@@ -4,7 +4,7 @@ import OpenColor from 'open-color'
 export const globalStyles = css`
   html {
     font-family: Pretendard, Roboto, sans-serif;
-    background-color: #f8f9fa;
+    background-color: white;
   }
 
   body {
@@ -32,5 +32,10 @@ export const globalStyles = css`
     &:hover {
       background-color: ${OpenColor.gray[2]};
     }
+  }
+  .container {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
   }
 `

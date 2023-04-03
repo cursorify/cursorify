@@ -38,7 +38,6 @@ const StyledWrapper = styled.div`
       background-color: ${OpenColor.gray[9]};
       border: 1px solid ${OpenColor.gray[8]};
       width: 100%;
-      max-width: 1020px;
       overflow: hidden;
       > .header {
         display: flex;
@@ -84,40 +83,6 @@ const StyledWrapper = styled.div`
             color: ${OpenColor.gray[5]};
             font-weight: 200;
             text-align: center;
-          }
-        }
-        .features {
-          display: flex;
-          justify-content: center;
-          gap: 80px;
-          padding: 50px 0 60px;
-          .feature {
-            color: ${OpenColor.gray[4]};
-            width: 200px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            gap: 10px;
-            .svg-wrapper {
-              background-color: ${OpenColor.gray[3]};
-              padding: 15px;
-              border-radius: 12px;
-              width: 200px;
-              height: 140px;
-              svg {
-                width: 100%;
-                height: 100%;
-              }
-            }
-            .title {
-              font-weight: 300;
-              color: ${OpenColor.gray[1]};
-              margin-top: 10px;
-            }
-            .description {
-              color: ${OpenColor.gray[5]};
-              font-weight: 200;
-            }
           }
         }
         .cursors {

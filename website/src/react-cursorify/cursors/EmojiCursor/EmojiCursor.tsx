@@ -3,12 +3,12 @@ import styled from '@emotion/styled'
 import React from 'react'
 
 const EmojiCursor: React.FC = () => {
-  const { hoverState } = useCursorify()
+  const { mouseState, hoverState } = useCursorify()
 
   return (
     <StyledWrapper data-hover={hoverState} {...{ a: 1 }}>
       {(() => {
-        // if(mouseState)
+        if (mouseState === 'mouseDown') return '✊'
         if (hoverState === 'pointer') return '👆'
         if (hoverState === 'text') return '✍️'
 

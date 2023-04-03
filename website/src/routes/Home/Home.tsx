@@ -33,7 +33,7 @@ const Home: React.FC = () => {
         </div>
       </div>
       <main>
-        <div className="window">
+        <div className="window container">
           <div className="header">
             <div className="lt">
               <div
@@ -65,37 +65,6 @@ const Home: React.FC = () => {
                 cursor below!
               </div>
             </div>
-            {/* feature가 필요한가? */}
-            {/* <div className="features">
-            <div className="feature">
-              <div className="svg-wrapper">
-                <EasyToUse />
-              </div>
-              <h4 className="title">Easy to use</h4>
-              <div className="description">
-                React Cursorify is designed to be user-friendly and easy to use.
-              </div>
-            </div>
-            <div className="feature">
-              <div className="svg-wrapper">
-                <Community />
-              </div>
-              <div className="title">Community friendly</div>
-              <div className="description">
-                React Cursorify is built with a focus on fostering a friendly
-                and supportive community.
-              </div>
-            </div>
-            <div className="feature">
-              <div className="svg-wrapper">
-                <Declarative />
-              </div>
-              <div className="title">Declarative</div>
-              <div className="description">
-                Simplifying programming with a declarative approach.
-              </div>
-            </div>
-          </div> */}
             <div className="cursors">
               <div className="cursor">
                 <div
