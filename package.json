@@ -1,6 +1,7 @@
 {
   "name": "react-cursorify",
   "version": "1.0.97",
+  "homepage": "https://morethanmin.github.io/react-cursorify",
   "description": "Customizable cursor component for any style 🕹️",
   "author": "Lee Sang Min",
   "license": "MIT",
@@ -8,10 +9,7 @@
     "type": "git",
     "url": "https://github.com/morethanmin/react-cursorify"
   },
-  "keywords": [
-    "custom-cursor",
-    "react-component"
-  ],
+  "keywords": ["custom-cursor", "react-component"],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

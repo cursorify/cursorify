@@ -5,6 +5,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { AiFillGithub } from 'react-icons/ai'
 import { useRegisterHover } from '@/react-cursorify'
 
+// TODO: github 문구로 변경
+
 type Props = {}
 
 const Header: React.FC<Props> = () => {
