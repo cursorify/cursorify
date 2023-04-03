@@ -9,49 +9,29 @@ import { Docs } from './Docs'
 
 const routes: RouteObject[] = [
   {
-    path: '/',
-    element: (
-      <Layout>
-        <Home />
-      </Layout>
-    ),
-  },
-  {
-    path: '/docs',
-    element: (
-      <Layout>
-        <Docs />
-      </Layout>
-    ),
-  },
-  {
-    path: '/cursor',
-    element: (
-      <Layout>
-        <Cursor />
-      </Layout>
-    ),
-  },
-  {
-    path: '/playground',
-    element: (
-      <Layout>
-        <Playground />
-      </Layout>
-    ),
-  },
-  {
-    path: '*',
-    errorElement: (
-      <Layout>
-        <NotFound />
-      </Layout>
-    ),
-    element: (
-      <Layout>
-        <NotFound />
-      </Layout>
-    ),
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/docs',
+        element: <Docs />,
+      },
+      {
+        path: '/cursor',
+        element: <Cursor />,
+      },
+      {
+        path: '/playground',
+        element: <Playground />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
+      },
+    ],
   },
 ]
 

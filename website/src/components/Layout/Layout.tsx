@@ -1,19 +1,22 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+
 import styled from '@emotion/styled'
-import { Header } from './Header'
-import { Footer } from './Footer'
 import { CursorifyProvider } from '@/react-cursorify'
 
-type Props = {
-  children?: React.ReactNode
-}
+import { Header } from './Header'
+import { Footer } from './Footer'
 
-const Layout: React.FC<Props> = ({ children }) => {
+type Props = {}
+
+const Layout: React.FC<Props> = () => {
   return (
     <CursorifyProvider>
       <StyledWrapper>
         <Header />
-        <main>{children}</main>
+        <main>
+          <Outlet />
+        </main>
         <Footer />
       </StyledWrapper>
     </CursorifyProvider>

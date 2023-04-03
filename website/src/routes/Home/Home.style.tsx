@@ -39,6 +39,7 @@ const StyledWrapper = styled.div`
       border: 1px solid ${OpenColor.gray[8]};
       width: 100%;
       max-width: 1020px;
+      overflow: hidden;
       > .header {
         display: flex;
         justify-content: space-between;

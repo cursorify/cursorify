@@ -4,7 +4,6 @@ import {
   EmojiCursor,
   PhingerCursor,
 } from '@/react-cursorify/cursors'
-import { Footer } from '@/components/Layout/Footer'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import StyledWrapper from './Home.style'
