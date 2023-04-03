@@ -1,97 +1,78 @@
 # react-cursorify
+
 ![react-cursorify-social-card](https://user-images.githubusercontent.com/72514247/227773776-762fbd64-1662-4d01-8049-9fee079cf717.png)
 
 Customizable cursor component for any style. 🕹️
 
-[Documentation](https://github.com/morethanmin/react-cursorify#getting-started) | [Cursors](https://github.com/morethanmin/react-cursorify#custom-cursors)
+[Docs](https://morethanmin.github.io/react-cursorify) | [Cursor](https://morethanmin.github.io/react-cursorify/cursor)
 
-## Getting Started
+# Getting Started
 
-### Install react-cursorify
+Let's apply react-cursorify!
+
+## Install react-cursorify
 
 You can install react-cursorify in your React project using the two commands below.
 
 via npm:
 
-```
+```zsh
 npm install react-cursorify
 ```
 
-via yarn:
+or via yarn:
 
-```
+```zsh
 yarn add react-cursorify
 ```
 
-### Applying to your react project.
+## Apply to your react project
 
-Just import and apply Cursorify as shown below and you're done! Easy, right?
+To apply react-cursorify, simply wrap your React project with `CursorifyProvider`. It's easy, right?
 
 ```tsx
+import { CursorifyProvider } from 'react-cursorify'
+
 const App = () => {
   return (
-    <div>
-      <Cursorify />
-      <button className="cursorify-pointer">hover me!</button>
-    </div>
+    <CursorifyProvider>
+      <>{/*....your component */}</>
+    </CursorifyProvider>
   )
 }
 
 export default App
 ```
 
-### Making Custom Cursor Component
+## Applying default settings
 
-`react-cursorify` defines styles through classname, and can easily create custom components using `useCursorify` hook.
+If you want to set default options for the cursor, you can apply the default cursor component, opacity, and delay. Typically, changing the cursor settings on a website is not common, so it is better to apply your website settings to the default settings.
 
-Below is a custom cursor component that detects `cursorify-pointer` classname. By default, `is{keyword}` detects the `cursorify-{keyword}` classname and changes state.
+Refer to the description of each option below.
 
-You can check [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#values) for keywords.
-
-```tsx
-const DefaultCursor = (props) => {
-  const { isPointer } = useCursorify()
-  return <StyledWrapper ref={ref} data-pointer={isPointer}></StyledWrapper>
-}
-
-export default DefaultCursor
-
-const StyledWrapper = styled.div`
-  width: 23px;
-  height: 23px;
-  background-color: rgba(224, 224, 224, 0.8);
-  border-radius: 50%;
-  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
-    background-color 0.1s ease-in-out;
-  &[data-pointer='true'] {
-    transform: scale(2.3);
-    background-color: rgba(224, 224, 224, 0.4);
-  }
-`
-```
-
-A custom cursor component can be applied as below.
+- cursor: pass the React component you want to apply.
+- delay: You can pass a number between 1 and 10.
+- opacity: You can pass a number between 0 and 1.
 
 ```tsx
-import React from 'react'
-import { Cursorify } from 'react-cursorify'
-import CustomCursor from 'component/CustomCursor'
+import { CursorifyProvider, EmojiCursor } from 'react-cursorify'
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div>
-      <Cursorify cursor={CustomCursor} />
-      <button className="cursorify-pointer">hover me!</button>
-    </div>
+    <CursorifyProvider cursor={EmojiCursor} delay={2} opacity={0.7}>
+      <>{/*....your component */}</>
+    </CursorifyProvider>
   )
 }
 
 export default App
 ```
 
-For more details, please refer to the [Documentation](https://github.com/morethanmin/react-cursorify#getting-started).
+## More info
 
-## Cursors
+For more details, please refer to the [Docs](https://morethanmin.github.io/react-cursorify/).
+
+## Cursor
 
 react-cursorify manages custom cursor components so that they can be shared and used. Please share your cursor component via PR!
 
