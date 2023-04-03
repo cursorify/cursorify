@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import OpenColor from 'open-color'
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { AiFillGithub } from 'react-icons/ai'
+import { BiLinkExternal } from 'react-icons/bi'
 import { useRegisterHover } from '@/react-cursorify'
 
 // TODO: github 문구로 변경
@@ -52,7 +52,8 @@ const Header: React.FC<Props> = () => {
           target="_blank"
           {...register('pointer')}
         >
-          <AiFillGithub />
+          <div>Github</div>
+          <BiLinkExternal />
         </a>
       </div>
     </StyledWrapper>
@@ -94,10 +95,18 @@ const StyledWrapper = styled.div`
   }
   > .rt {
     a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
       svg {
         color: ${OpenColor.gray[9]};
-        font-size: 28px;
+        font-size: 22px;
+      }
+      &:hover {
+        background-color: ${OpenColor.gray[1]};
       }
     }
   }
