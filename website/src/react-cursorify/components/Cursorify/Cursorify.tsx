@@ -2,7 +2,7 @@ import React from 'react'
 import { StyledWrapper } from './style'
 import useMouseMove from './hooks/useMouseMove'
 import useGlobalStyleEffect from './hooks/useGlobalStyleEffect'
-import { useCursorifyState } from '../../contexts/CursorifyContext/CursorifyContext'
+import { useCursorifyState } from '../CursorifyProvider/CursorifyProvider'
 import useMouseStateEffect from './hooks/useMouseStateEffect'
 import useRouteChange from './hooks/useRouteChange'
 

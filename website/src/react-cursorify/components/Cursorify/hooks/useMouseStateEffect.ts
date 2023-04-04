@@ -1,5 +1,5 @@
-import { useCursorifyDispatch } from '@/react-cursorify/contexts'
 import { useEffect } from 'react'
+import { useCursorifyDispatch } from '../../CursorifyProvider'
 
 const useMouseStateEffect = () => {
   const dispatch = useCursorifyDispatch()

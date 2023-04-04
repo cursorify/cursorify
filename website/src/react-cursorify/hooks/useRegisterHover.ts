@@ -1,4 +1,4 @@
-import { useCursorifyDispatch } from '../contexts'
+import { useCursorifyDispatch } from '../components/CursorifyProvider'
 import { HoverState } from '../types'
 
 const useRegisterHover = () => {

@@ -1,5 +1,4 @@
 import { Reducer, useReducer, Dispatch } from 'react'
-import { defaultCursorifyState } from '../../constants'
 import { CusorifyStateType, CursorifyReducerActionType } from '../../types'
 
 const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
@@ -27,13 +26,12 @@ const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
   }
 }
 
-type UseCursorifyReducerType = () => [
-  CusorifyStateType,
-  Dispatch<CursorifyReducerActionType>
-]
+type UseCursorifyReducerType = (
+  defaultState: CusorifyStateType
+) => [CusorifyStateType, Dispatch<CursorifyReducerActionType>]
 
-const useCursorifyReducer: UseCursorifyReducerType = () => {
-  return useReducer(reducer, defaultCursorifyState)
+const useCursorifyReducer: UseCursorifyReducerType = (defaultState) => {
+  return useReducer(reducer, defaultState)
 }
 
 export default useCursorifyReducer

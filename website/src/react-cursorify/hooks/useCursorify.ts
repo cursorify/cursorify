@@ -1,4 +1,4 @@
-import { useCursorifyState } from '../contexts/CursorifyContext/CursorifyContext'
+import { useCursorifyState } from '../components/CursorifyProvider/CursorifyProvider'
 
 const useCursorify = () => {
   const state = useCursorifyState()

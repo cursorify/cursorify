@@ -36,7 +36,7 @@ const App = () => {
 export default App
 ```
 
-## Applying default settings
+# Applying default settings
 
 If you want to set default options for the cursor, you can apply the default cursor component, opacity, and delay. Typically, changing the cursor settings on a website is not common, so it is better to apply your website settings to the default settings.
 
@@ -60,7 +60,7 @@ const App = () => {
 export default App
 ```
 
-# Applying hover style with useRegisterHover
+# Applying hover style with `useRegisterHover`
 
 To apply hover style to the cursor, you must use the `useRegisterHover` hook. You can use the hook as follows. For the register argument, write the [cursor style keyword](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#values).
 
@@ -79,7 +79,7 @@ const Home = () => {
 export default Home
 ```
 
-# Creating a custom cursor using useCursorify
+# Creating a custom cursor using `useCursorify`
 
 You can easily create your own cursor component by using `useCursorify`. The useCursorify hook returns `mouseState` and `hoverState`. Refer to the description of each below.
 
@@ -117,7 +117,7 @@ const StyledWrapper = styled.div`
 `
 ```
 
-# Change cursor using useChangeCursor
+# Change cursor using `useChangeCursor`
 
 While it's not common to change the cursor on a website, we provide a hook that allows you to do so. To change the cursor component, use the `useChangeCursor` hook. The changeCursor argument should be a React component.
 
@@ -125,7 +125,7 @@ While it's not common to change the cursor on a website, we provide a hook that 
 import { useChangeCursor, PhingerCursor } from 'react-cursorify'
 
 const Home = () => {
-  const changeCursor = useRegisterHover()
+  const changeCursor = useChangeCursor()
 
   const handleClick = () => {
     changeCursor(PhingerCursor)

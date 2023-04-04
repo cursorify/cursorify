@@ -1,7 +1,13 @@
 import { createContext, ReactNode, Dispatch, useContext } from 'react'
 import { defaultCursorifyState } from '../../constants'
 import useCursorifyReducer from './useCursorifyReducer'
-import { CursorifyReducerActionType, CusorifyStateType } from '../../types'
+import {
+  CursorifyOptions,
+  CursorifyReducerActionType,
+  CusorifyStateType,
+} from '../../types'
+import { Cursorify } from '@/react-cursorify/components/Cursorify'
+import { CircleCursor } from '@/react-cursorify/cursors'
 
 const CursorifyStateContext = createContext<CusorifyStateType>(
   defaultCursorifyState
@@ -10,16 +16,24 @@ const CursorifyStateContext = createContext<CusorifyStateType>(
 const CursorifyDispatchContext =
   createContext<Dispatch<CursorifyReducerActionType> | null>(null)
 
-type Props = {
-  children: ReactNode
+type Props = Partial<CursorifyOptions> & {
+  children?: ReactNode
 }
 
-export const CursorifyContext: React.FC<Props> = ({ children }) => {
-  const [state, dispatch] = useCursorifyReducer()
+export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
+  const { cursor = CircleCursor, delay = 1, opacity = 0.7 } = props
+
+  const [state, dispatch] = useCursorifyReducer({
+    ...defaultCursorifyState,
+    cursor,
+    delay,
+    opacity,
+  })
 
   return (
     <CursorifyStateContext.Provider value={state}>
       <CursorifyDispatchContext.Provider value={dispatch}>
+        <Cursorify />
         {children}
       </CursorifyDispatchContext.Provider>
     </CursorifyStateContext.Provider>

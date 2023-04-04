@@ -1,4 +1,11 @@
 import React from 'react'
+import { JsxAttribute } from 'typescript'
+
+export type CursorifyOptions = {
+  cursor: CursorState
+  opacity: number
+  delay: number
+}
 
 export type CusorifyStateType = {
   hoverState: HoverState
@@ -47,7 +54,7 @@ export type HoverState =
   | 'zoomOut'
 
 export type MouseState = 'default' | 'mouseDown'
-export type CursorState = React.FC
+export type CursorState = any
 export type CursorifyReducerActionType =
   | {
       type: 'CHANGE_HOVER_STATE'
