@@ -4,7 +4,7 @@
 
 Customizable cursor component for any style. 🕹️
 
-[Docs](https://morethanmin.github.io/react-cursorify) | [Cursor](https://morethanmin.github.io/react-cursorify/cursor)
+[Website](https://morethanmin.github.io/react-cursorify)
 
 # Getting Started
 
@@ -53,13 +53,19 @@ Refer to the description of each option below.
 - cursor: pass the React component you want to apply.
 - delay: You can pass a number between 1 and 10.
 - opacity: You can pass a number between 0 and 1.
+- visibleDefaultCursor: You can pass a boolean.
 
 ```tsx
 import { CursorifyProvider, EmojiCursor } from 'react-cursorify'
 
 const App = () => {
   return (
-    <CursorifyProvider cursor={EmojiCursor} delay={2} opacity={0.7}>
+    <CursorifyProvider
+      cursor={EmojiCursor}
+      delay={2}
+      opacity={0.7}
+      visibleDefaultCursor={false}
+    >
       <>{/*....your component */}</>
     </CursorifyProvider>
   )
