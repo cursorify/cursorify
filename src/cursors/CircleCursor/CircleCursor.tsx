@@ -1,10 +1,11 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { useCursorify } from '../../useCursorify'
+import useCursorify from '../../hooks/useCursorify'
 
 const DefaultCursor: React.FC = () => {
-  const { isPointer } = useCursorify()
-  return <StyledWrapper data-pointer={isPointer}></StyledWrapper>
+  const { hoverState } = useCursorify()
+
+  return <StyledWrapper data-hover={hoverState}></StyledWrapper>
 }
 
 export default DefaultCursor
@@ -16,7 +17,7 @@ const StyledWrapper = styled.div`
   background-color: rgba(224, 224, 224, 0.8);
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
     background-color 0.1s ease-in-out;
-  &[data-pointer='true'] {
+  &[data-hover='pointer'] {
     transform: scale(2.3);
     background-color: rgba(224, 224, 224, 0.4);
   }

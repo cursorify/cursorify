@@ -1,3 +1,3 @@
-export * from './Cursorify'
-export * from './useCursorify'
+export * from './components'
+export * from './hooks'
 export * from './cursors'
