@@ -3,7 +3,7 @@ import OpenColor from 'open-color'
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { BiLinkExternal } from 'react-icons/bi'
-import { useRegisterHover } from '@/react-cursorify'
+import { useRegisterHover } from 'react-cursorify'
 
 // TODO: github 문구로 변경
 

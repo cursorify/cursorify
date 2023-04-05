@@ -1,4 +1,4 @@
-import { useRegisterHover } from '@/react-cursorify'
+import { useRegisterHover } from 'react-cursorify'
 import styled from '@emotion/styled'
 import OpenColor from 'open-color'
 import React from 'react'

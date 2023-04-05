@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 import styled from '@emotion/styled'
-import { CursorifyProvider } from '@/react-cursorify'
+import { CursorifyProvider } from 'react-cursorify'
 
 import { Header } from './Header'
 import { Footer } from './Footer'

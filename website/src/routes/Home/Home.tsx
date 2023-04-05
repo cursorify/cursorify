@@ -1,9 +1,10 @@
-import { useUpdateCursorify, useRegisterHover } from '@/react-cursorify'
 import {
+  useUpdateCursorify,
+  useRegisterHover,
   CircleCursor,
   EmojiCursor,
   PhingerCursor,
-} from '@/react-cursorify/cursors'
+} from 'react-cursorify'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import StyledWrapper from './Home.style'
