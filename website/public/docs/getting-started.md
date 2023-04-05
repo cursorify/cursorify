@@ -117,15 +117,20 @@ const StyledWrapper = styled.div`
 `
 ```
 
-# Change cursor using `useChangeCursor`
+# Change cursor using `useUpdateCursorify`
 
-While it's not common to change the cursor on a website, we provide a hook that allows you to do so. To change the cursor component, use the `useChangeCursor` hook. The changeCursor argument should be a React component.
+While it's not common to change the cursor on a website, we provide a hook that allows you to do so. To change the cursor component, use the `useUpdateCursorify` hook. The changeCursor argument should be a React component.
 
 ```tsx
-import { useChangeCursor, PhingerCursor } from 'react-cursorify'
+import { useUpdateCursorify, PhingerCursor } from 'react-cursorify'
 
 const Home = () => {
-  const changeCursor = useChangeCursor()
+  const {
+    updateCursor,
+    updateDelay,
+    updateOpacity,
+    updateVisibleDefaultCursor,
+  } = useUpdateCursorify()
 
   const handleClick = () => {
     changeCursor(PhingerCursor)

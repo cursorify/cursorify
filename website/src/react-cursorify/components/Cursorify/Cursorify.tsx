@@ -7,16 +7,25 @@ import useMouseStateEffect from './hooks/useMouseStateEffect'
 import useRouteChange from './hooks/useRouteChange'
 
 const Cursorify: React.FC = () => {
-  const { cursor: Cursor, delay, opacity } = useCursorifyState()
-  const mouseRef = useMouseMove(delay)
+  const {
+    cursor: Cursor,
+    delay,
+    opacity,
+    visibleDefaultCursor,
+  } = useCursorifyState()
+  const mouseRef = useMouseMove(delay, opacity)
   useMouseStateEffect()
 
   useRouteChange()
-  useGlobalStyleEffect(`
+  useGlobalStyleEffect(
+    visibleDefaultCursor
+      ? ''
+      : `
     * {
       cursor: none !important;
     }
-  `)
+  `
+  )
 
   return (
     <StyledWrapper ref={mouseRef}>

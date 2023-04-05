@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-const useMouseMove = (delay: number) => {
+const useMouseMove = (delay: number, opacity: number) => {
   const endX = useRef(0)
   const endY = useRef(0)
 
@@ -24,7 +24,7 @@ const useMouseMove = (delay: number) => {
 
   const handleMouseMove: (this: Window, ev: MouseEvent) => any = (e) => {
     if (mouseRef.current === null) return
-    mouseRef.current.style.opacity = '1'
+    mouseRef.current.style.opacity = `${opacity}`
 
     endX.current = e.clientX
     endY.current = e.clientY

@@ -8,13 +8,13 @@ const useRegisterHover = () => {
     return {
       onMouseEnter: (e: any) => {
         dispatch({
-          type: 'CHANGE_HOVER_STATE',
+          type: 'UPDATE_HOVER_STATE',
           payload: hoverState,
         })
       },
       onMouseLeave: (e: any) => {
         dispatch({
-          type: 'CHANGE_HOVER_STATE',
+          type: 'UPDATE_HOVER_STATE',
           payload: 'default',
         })
       },

@@ -1,4 +1,4 @@
-import { useChangeCursor, useRegisterHover } from '@/react-cursorify'
+import { useUpdateCursorify, useRegisterHover } from '@/react-cursorify'
 import {
   CircleCursor,
   EmojiCursor,
@@ -14,7 +14,7 @@ import EasyToUse from './svgs/EasyToUse'
 const Home: React.FC = () => {
   const navigate = useNavigate()
   const register = useRegisterHover()
-  const changeCursor = useChangeCursor()
+  const { updateCursor } = useUpdateCursorify()
   return (
     <StyledWrapper>
       <div className="header">
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
               <div className="cursor">
                 <div
                   className="cursor-wrapper"
-                  onClick={() => changeCursor(CircleCursor)}
+                  onClick={() => updateCursor(CircleCursor)}
                   {...register('pointer')}
                 >
                   <CircleCursor />
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
               <div className="cursor">
                 <div
                   className="cursor-wrapper phinger"
-                  onClick={() => changeCursor(PhingerCursor)}
+                  onClick={() => updateCursor(PhingerCursor)}
                   {...register('pointer')}
                 >
                   <PhingerCursor />
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
               <div className="cursor">
                 <div
                   className="cursor-wrapper"
-                  onClick={() => changeCursor(EmojiCursor)}
+                  onClick={() => updateCursor(EmojiCursor)}
                   {...register('pointer')}
                 >
                   <EmojiCursor />

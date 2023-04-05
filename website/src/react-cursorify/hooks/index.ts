@@ -1,3 +1,3 @@
-export * from './useChangeCursor'
+export * from './useUpdateCursorify'
 export * from './useCursorify'
 export * from './useRegisterHover'

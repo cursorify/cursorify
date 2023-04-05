@@ -6,13 +6,13 @@ const useMouseStateEffect = () => {
 
   const handleMouseDown = (e: MouseEvent) => {
     dispatch({
-      type: 'CHANGE_MOUSE_STATE',
+      type: 'UPDATE_MOUSE_STATE',
       payload: 'mouseDown',
     })
   }
   const handleMouseUp = (e: MouseEvent) => {
     dispatch({
-      type: 'CHANGE_MOUSE_STATE',
+      type: 'UPDATE_MOUSE_STATE',
       payload: 'default',
     })
   }

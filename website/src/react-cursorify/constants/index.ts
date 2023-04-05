@@ -6,4 +6,5 @@ export const defaultCursorifyState: CusorifyStateType = {
   cursor: () => null,
   delay: 1,
   opacity: 1,
+  visibleDefaultCursor: false,
 }

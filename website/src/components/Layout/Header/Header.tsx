@@ -35,14 +35,14 @@ const Header: React.FC<Props> = () => {
           >
             Cursor
           </Link>
-          <Link
+          {/* <Link
             className="menu"
             data-active={location.pathname === '/playground'}
             to={'/playground'}
             {...register('pointer')}
           >
             Playground
-          </Link>
+          </Link> */}
         </nav>
       </div>
       <div className="rt">

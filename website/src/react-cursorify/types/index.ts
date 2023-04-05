@@ -1,18 +1,10 @@
-import React from 'react'
-import { JsxAttribute } from 'typescript'
-
-export type CursorifyOptions = {
-  cursor: CursorState
-  opacity: number
-  delay: number
-}
-
 export type CusorifyStateType = {
   hoverState: HoverState
   mouseState: MouseState
   cursor: CursorState
   delay: number
   opacity: number
+  visibleDefaultCursor: boolean
 }
 
 export type HoverState =
@@ -57,14 +49,26 @@ export type MouseState = 'default' | 'mouseDown'
 export type CursorState = any
 export type CursorifyReducerActionType =
   | {
-      type: 'CHANGE_HOVER_STATE'
+      type: 'UPDATE_HOVER_STATE'
       payload: HoverState
     }
   | {
-      type: 'CHANGE_MOUSE_STATE'
+      type: 'UPDATE_MOUSE_STATE'
       payload: MouseState
     }
   | {
-      type: 'CHANGE_CURSOR'
+      type: 'UPDATE_CURSOR'
       payload: CursorState
+    }
+  | {
+      type: 'UPDATE_DELAY'
+      payload: number
+    }
+  | {
+      type: 'UPDATE_OPACITY'
+      payload: number
+    }
+  | {
+      type: 'UPDATE_VISIBLE_DEFAULT_CURSOR'
+      payload: boolean
     }

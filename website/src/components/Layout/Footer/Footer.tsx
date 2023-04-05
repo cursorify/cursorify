@@ -10,7 +10,7 @@ const Footer: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div>
-        Copyright © 2023{' '}
+        Made with ❤️ by{' '}
         <a
           href="https://github.com/morethanmin"
           target="_blank"

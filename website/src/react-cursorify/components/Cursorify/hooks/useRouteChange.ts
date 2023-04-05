@@ -12,7 +12,7 @@ const useRouteChange = () => {
 
   useEffect(() => {
     dispatch({
-      type: 'CHANGE_HOVER_STATE',
+      type: 'UPDATE_HOVER_STATE',
       payload: 'default',
     })
   }, [location])

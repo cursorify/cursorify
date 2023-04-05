@@ -8,7 +8,7 @@ const useGlobalStyleEffect = (styleString: string) => {
     return () => {
       document.head.removeChild(style)
     }
-  }, [])
+  }, [styleString])
 
   return
 }
