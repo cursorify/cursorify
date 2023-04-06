@@ -4,18 +4,18 @@ import {
   CircleCursor,
   EmojiCursor,
   PhingerCursor,
+  useCursorifyState,
 } from 'react-cursorify'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import StyledWrapper from './Home.style'
-import Community from './svgs/Community'
-import Declarative from './svgs/Declarative'
-import EasyToUse from './svgs/EasyToUse'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
   const register = useRegisterHover()
-  const { updateCursor } = useUpdateCursorify()
+  const state = useCursorifyState()
+  const { updateCursor, updateOpacity, updateDelay } = useUpdateCursorify()
+
   return (
     <StyledWrapper>
       <div className="header">
@@ -107,13 +107,35 @@ const Home: React.FC = () => {
             <div className="options">
               <div className="option">
                 <div className="label">Opacity</div>
-                <input type="range" name="opacity" id="opacity" />
-                <div className="value">1</div>
+                <input
+                  type="range"
+                  name="opacity"
+                  id="opacity"
+                  value={state.opacity}
+                  onChange={(e) => {
+                    updateOpacity(+e.target.value)
+                  }}
+                  min={0.1}
+                  max={1}
+                  step={0.1}
+                />
+                <div className="value">{state.opacity}</div>
               </div>
               <div className="option">
                 <div className="label">Delay</div>
-                <input type="range" name="delay" id="delay" />
-                <div className="value">1</div>
+                <input
+                  type="range"
+                  name="delay"
+                  id="delay"
+                  value={state.delay}
+                  onChange={(e) => {
+                    updateDelay(+e.target.value)
+                  }}
+                  min={1}
+                  max={40}
+                  step={1}
+                />
+                <div className="value">{state.delay}</div>
               </div>
             </div>
           </div>

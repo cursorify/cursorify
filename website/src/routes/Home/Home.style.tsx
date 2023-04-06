@@ -141,6 +141,8 @@ const StyledWrapper = styled.div`
               width: 300px;
             }
             .value {
+              text-align: center;
+              width: 70px;
               margin-left: 20px;
             }
           }
