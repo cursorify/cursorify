@@ -6,8 +6,6 @@ const markdownStyle = css`
   margin: 0;
   color: #24292f;
   background-color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -111,7 +109,6 @@ const markdownStyle = css`
   kbd,
   pre,
   samp {
-    font-family: monospace;
     font-size: 1em;
   }
 
@@ -251,8 +248,6 @@ const markdownStyle = css`
   kbd {
     display: inline-block;
     padding: 3px 5px;
-    font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-      Liberation Mono, monospace;
     line-height: 10px;
     color: #24292f;
     vertical-align: middle;
@@ -341,16 +336,12 @@ const markdownStyle = css`
   tt,
   code,
   samp {
-    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-      Liberation Mono, monospace;
     font-size: 12px;
   }
 
   pre {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-      Liberation Mono, monospace;
     font-size: 12px;
     word-wrap: normal;
   }
@@ -825,7 +816,6 @@ const markdownStyle = css`
   }
 
   .footnotes .data-footnote-backref g-emoji {
-    font-family: monospace;
   }
 
   .pl-c {
@@ -951,7 +941,6 @@ const markdownStyle = css`
   g-emoji {
     display: inline-block;
     min-width: 1ch;
-    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 1em;
     font-style: normal !important;
     font-weight: 400;

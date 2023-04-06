@@ -45,7 +45,7 @@ const useMouseMove = (delay: number, opacity: number) => {
       cancelAnimationFrame(requestRef.current)
       window.removeEventListener('mousemove', handleMouseMove)
     }
-  }, [delay])
+  }, [delay, opacity])
 
   return mouseRef
 }

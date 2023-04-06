@@ -21,6 +21,21 @@ const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
         ...state,
         cursor: action.payload,
       }
+    case 'UPDATE_DELAY':
+      return {
+        ...state,
+        delay: action.payload,
+      }
+    case 'UPDATE_OPACITY':
+      return {
+        ...state,
+        opacity: action.payload,
+      }
+    case 'UPDATE_VISIBLE_DEFAULT_CURSOR':
+      return {
+        ...state,
+        visibleDefaultCursor: action.payload,
+      }
     default:
       return state
   }
