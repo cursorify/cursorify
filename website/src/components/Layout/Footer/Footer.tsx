@@ -1,4 +1,4 @@
-import { useRegisterHover } from 'react-cursorify'
+import { useHoverRegister } from 'react-cursorify'
 import styled from '@emotion/styled'
 import OpenColor from 'open-color'
 import React from 'react'
@@ -6,7 +6,7 @@ import React from 'react'
 type Props = {}
 
 const Footer: React.FC<Props> = () => {
-  const register = useRegisterHover()
+  const register = useHoverRegister()
   return (
     <StyledWrapper>
       <div>

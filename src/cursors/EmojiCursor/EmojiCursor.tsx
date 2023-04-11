@@ -1,17 +1,17 @@
 import styled from '@emotion/styled'
-import React from 'react'
 import useCursorify from '../../hooks/useCursorify'
+import React from 'react'
+import { CursorProps } from '../../types'
 
-const EmojiCursor: React.FC = () => {
+const EmojiCursor: React.FC<CursorProps> = ({ disabled }) => {
   const { mouseState, hoverState } = useCursorify()
 
   return (
-    <StyledWrapper data-hover={hoverState} {...{ a: 1 }}>
+    <StyledWrapper data-hover={hoverState}>
       {(() => {
+        if (disabled) return '🖐️'
         if (mouseState === 'mouseDown') return '✊'
         if (hoverState === 'pointer') return '👆'
-        if (hoverState === 'text') return '✍️'
-
         return '🖐️'
       })()}
     </StyledWrapper>

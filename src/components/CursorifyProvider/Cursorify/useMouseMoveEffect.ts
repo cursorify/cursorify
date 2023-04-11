@@ -1,13 +1,15 @@
-import React, { useEffect, useRef } from 'react'
+import React, { RefObject, useEffect, useRef } from 'react'
 
-const useMouseMove = (delay: number, opacity: number) => {
+const useMouseMoveEffect = (
+  mouseRef: RefObject<HTMLDivElement>,
+  delay: number,
+  opacity: number
+) => {
   const endX = useRef(0)
   const endY = useRef(0)
 
   const _x: React.MutableRefObject<number | null> = useRef(null)
   const _y: React.MutableRefObject<number | null> = useRef(null)
-
-  const mouseRef = useRef<HTMLDivElement>(null)
 
   const requestRef = useRef(0)
 
@@ -50,4 +52,4 @@ const useMouseMove = (delay: number, opacity: number) => {
   return mouseRef
 }
 
-export default useMouseMove
+export default useMouseMoveEffect

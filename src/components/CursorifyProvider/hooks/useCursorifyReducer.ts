@@ -1,5 +1,5 @@
 import { Reducer, useReducer, Dispatch } from 'react'
-import { CusorifyStateType, CursorifyReducerActionType } from '../../types'
+import { CusorifyStateType, CursorifyReducerActionType } from '../../../types'
 
 const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
   state,
@@ -34,7 +34,7 @@ const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
     case 'UPDATE_VISIBLE_DEFAULT_CURSOR':
       return {
         ...state,
-        visibleDefaultCursor: action.payload,
+        defaultCursorVisible: action.payload,
       }
     default:
       return state

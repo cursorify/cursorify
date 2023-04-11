@@ -3,7 +3,7 @@ import OpenColor from 'open-color'
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { BiLinkExternal } from 'react-icons/bi'
-import { useRegisterHover } from 'react-cursorify'
+import { useHoverRegister } from 'react-cursorify'
 
 // TODO: github 문구로 변경
 
@@ -11,7 +11,7 @@ type Props = {}
 
 const Header: React.FC<Props> = () => {
   const location = useLocation()
-  const register = useRegisterHover()
+  const register = useHoverRegister()
   return (
     <StyledWrapper>
       <div className="lt">

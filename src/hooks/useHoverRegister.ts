@@ -1,7 +1,7 @@
 import { useCursorifyDispatch } from '../components/CursorifyProvider'
 import { HoverState } from '../types'
 
-const useRegisterHover = () => {
+const useHoverRegister = () => {
   const dispatch = useCursorifyDispatch()
 
   const register = (hoverState: HoverState) => {
@@ -23,4 +23,4 @@ const useRegisterHover = () => {
   return register
 }
 
-export { useRegisterHover }
+export { useHoverRegister }

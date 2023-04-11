@@ -1,10 +1,10 @@
+import { ReactNode } from 'react'
 import { useCursorifyDispatch } from '../components/CursorifyProvider'
-import { CursorState } from '../types'
 
 const useUpdateCursorify = () => {
   const dispatch = useCursorifyDispatch()
 
-  const updateCursor = (cursor: CursorState) => {
+  const updateCursor = (cursor: ReactNode) => {
     dispatch({
       type: 'UPDATE_CURSOR',
       payload: cursor,
@@ -25,10 +25,10 @@ const useUpdateCursorify = () => {
     })
   }
 
-  const updateVisibleDefaultCursor = (visibleDefaultCursor: boolean) => {
+  const updatedefaultCursorVisible = (defaultCursorVisible: boolean) => {
     dispatch({
       type: 'UPDATE_VISIBLE_DEFAULT_CURSOR',
-      payload: visibleDefaultCursor,
+      payload: defaultCursorVisible,
     })
   }
 
@@ -36,7 +36,7 @@ const useUpdateCursorify = () => {
     updateCursor,
     updateDelay,
     updateOpacity,
-    updateVisibleDefaultCursor,
+    updatedefaultCursorVisible,
   }
 }
 

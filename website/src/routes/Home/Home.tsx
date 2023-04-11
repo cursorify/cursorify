@@ -1,6 +1,6 @@
 import {
   useUpdateCursorify,
-  useRegisterHover,
+  useHoverRegister,
   CircleCursor,
   EmojiCursor,
   PhingerCursor,
@@ -12,7 +12,7 @@ import StyledWrapper from './Home.style'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
-  const register = useRegisterHover()
+  const register = useHoverRegister()
   const state = useCursorifyState()
   const { updateCursor, updateOpacity, updateDelay } = useUpdateCursorify()
 
@@ -70,10 +70,10 @@ const Home: React.FC = () => {
               <div className="cursor">
                 <div
                   className="cursor-wrapper"
-                  onClick={() => updateCursor(CircleCursor)}
+                  onClick={() => updateCursor(<CircleCursor />)}
                   {...register('pointer')}
                 >
-                  <CircleCursor />
+                  <CircleCursor disabled />
                 </div>
                 <h4 className="title" {...register('text')}>
                   Circle
@@ -82,10 +82,10 @@ const Home: React.FC = () => {
               <div className="cursor">
                 <div
                   className="cursor-wrapper phinger"
-                  onClick={() => updateCursor(PhingerCursor)}
+                  onClick={() => updateCursor(<PhingerCursor />)}
                   {...register('pointer')}
                 >
-                  <PhingerCursor />
+                  <PhingerCursor disabled />
                 </div>
                 <h4 className="title" {...register('text')}>
                   Phinger
@@ -94,10 +94,10 @@ const Home: React.FC = () => {
               <div className="cursor">
                 <div
                   className="cursor-wrapper"
-                  onClick={() => updateCursor(EmojiCursor)}
+                  onClick={() => updateCursor(<EmojiCursor />)}
                   {...register('pointer')}
                 >
-                  <EmojiCursor />
+                  <EmojiCursor disabled />
                 </div>
                 <h4 className="title" {...register('text')}>
                   Emoji

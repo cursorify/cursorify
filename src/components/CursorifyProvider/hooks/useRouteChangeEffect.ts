@@ -1,13 +1,14 @@
-import { useEffect } from 'react'
+import { Dispatch, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useCursorifyDispatch } from '../../CursorifyProvider'
+import { CursorifyReducerActionType } from '../../../types'
 
 const isNext =
   typeof window !== 'undefined' && (window as any).__NEXT_DATA__ !== undefined
 
 // TODO: support with Next.js
-const useRouteChange = () => {
-  const dispatch = useCursorifyDispatch()
+const useRouteChangeEffect = (
+  dispatch: Dispatch<CursorifyReducerActionType>
+) => {
   const location = useLocation()
 
   useEffect(() => {
@@ -20,4 +21,4 @@ const useRouteChange = () => {
   return
 }
 
-export default useRouteChange
+export default useRouteChangeEffect

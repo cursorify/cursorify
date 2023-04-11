@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import { BASENAME } from '@constants/index'
+import { BASENAME, DOC_MARKDOWN } from '@constants/index'
 import StyledWrapper from './Docs.style'
 
 const Docs: React.FC = () => {
@@ -20,7 +20,7 @@ const Docs: React.FC = () => {
 
   return (
     <StyledWrapper className="container">
-      <ReactMarkdown className="markdown">{markdown}</ReactMarkdown>
+      <ReactMarkdown className="markdown">{DOC_MARKDOWN}</ReactMarkdown>
     </StyledWrapper>
   )
 }

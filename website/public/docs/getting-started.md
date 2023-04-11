@@ -60,15 +60,15 @@ const App = () => {
 export default App
 ```
 
-# Applying hover style with `useRegisterHover`
+# Applying hover style with `useHoverRegister`
 
-To apply hover style to the cursor, you must use the `useRegisterHover` hook. You can use the hook as follows. For the register argument, write the [cursor style keyword](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#values).
+To apply hover style to the cursor, you must use the `useHoverRegister` hook. You can use the hook as follows. For the register argument, write the [cursor style keyword](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#values).
 
 ```tsx
-import { useRegisterHover } from 'react-cursorify'
+import { useHoverRegister } from 'react-cursorify'
 
 const Home = () => {
-  const register = useRegisterHover()
+  const register = useHoverRegister()
   return (
     <div>
       <button {...register('pointer')}>hover me 🕹️</button>
@@ -84,7 +84,7 @@ export default Home
 You can easily create your own cursor component by using `useCursorify`. The useCursorify hook returns `mouseState` and `hoverState`. Refer to the description of each below.
 
 - mouseState: Displays the mouse state. Currently, only 'default' and 'mouseDown' exist.
-- hoverState: Displays the style applied using the `useRegisterHover` hook.
+- hoverState: Displays the style applied using the `useHoverRegister` hook.
 
 The following is the `EmojiCursor` cursor component of react-cursorify. You don't necessarily have to apply styles using emotion. Try creating a cursor component with your own style!
 
@@ -129,7 +129,7 @@ const Home = () => {
     updateCursor,
     updateDelay,
     updateOpacity,
-    updateVisibleDefaultCursor,
+    updatedefaultCursorVisible,
   } = useUpdateCursorify()
 
   const handleClick = () => {

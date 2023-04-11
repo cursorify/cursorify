@@ -6,8 +6,7 @@ import { globalStyles } from '@styles/global'
 
 const App: React.FC = () => {
   const router = createHashRouter(routes)
-  console.log("!");
-  
+
   return (
     <>
       <Global styles={globalStyles} />
