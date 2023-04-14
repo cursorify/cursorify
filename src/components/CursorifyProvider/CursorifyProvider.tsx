@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react'
+import React, { PropsWithChildren, ReactNode } from 'react'
 import { createContext, Dispatch, useContext } from 'react'
 import { defaultCursorifyState } from '../../constants'
 import useCursorifyReducer from './hooks/useCursorifyReducer'
 import { CursorifyReducerActionType, CusorifyStateType } from '../../types'
 import { CircleCursor } from '../../cursors'
-import usedefaultCursorVisibleEffect from './hooks/usedefaultCursorVisibleEffect'
+import useDefaultCursorVisibleEffect from './hooks/temp'
 import useRouteChangeEffect from './hooks/useRouteChangeEffect'
 import useMouseStateEffect from './hooks/useMouseStateEffect'
 import Cursorify from './Cursorify'
@@ -16,13 +16,13 @@ const CursorifyStateContext = createContext<CusorifyStateType>(
 const CursorifyDispatchContext =
   createContext<Dispatch<CursorifyReducerActionType> | null>(null)
 
-type Props = {
-  children?: ReactNode
+type Props = PropsWithChildren<{
   cursor?: ReactNode
   opacity?: number
   delay?: number
   defaultCursorVisible?: boolean
-}
+  enabled?: boolean
+}>
 
 export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
   const {
@@ -30,6 +30,7 @@ export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
     delay = 1,
     opacity = 1,
     defaultCursorVisible = false,
+    enabled = true,
   } = props
   const [state, dispatch] = useCursorifyReducer({
     ...defaultCursorifyState,
@@ -37,15 +38,16 @@ export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
     delay,
     opacity,
     defaultCursorVisible,
+    enabled,
   })
   useRouteChangeEffect(dispatch)
   useMouseStateEffect(dispatch)
-  usedefaultCursorVisibleEffect(state.defaultCursorVisible)
+  useDefaultCursorVisibleEffect(state.defaultCursorVisible)
 
   return (
     <CursorifyStateContext.Provider value={state}>
       <CursorifyDispatchContext.Provider value={dispatch}>
-        <Cursorify>{state.cursor}</Cursorify>
+        {state.enabled && <Cursorify>{state.cursor}</Cursorify>}
         {children}
       </CursorifyDispatchContext.Provider>
     </CursorifyStateContext.Provider>
@@ -55,7 +57,9 @@ export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
 export function useCursorifyState() {
   const context = useContext(CursorifyStateContext)
   if (!context) {
-    throw new Error('Cannot find Cursorify Provider')
+    throw new Error(
+      'Cannot find Cursorify Provider. You need to use Cursorify Provider within its parent component.'
+    )
   }
   return context
 }
@@ -63,7 +67,9 @@ export function useCursorifyState() {
 export function useCursorifyDispatch() {
   const context = useContext(CursorifyDispatchContext)
   if (!context) {
-    throw new Error('Cannot find Cursorify Provider')
+    throw new Error(
+      'Cannot find Cursorify Provider. You need to use Cursorify Provider within its parent component.'
+    )
   }
   return context
 }

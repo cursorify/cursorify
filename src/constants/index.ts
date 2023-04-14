@@ -7,4 +7,5 @@ export const defaultCursorifyState: CusorifyStateType = {
   delay: 1,
   opacity: 1,
   defaultCursorVisible: false,
+  enabled: true,
 }

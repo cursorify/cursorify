@@ -36,6 +36,11 @@ const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
         ...state,
         defaultCursorVisible: action.payload,
       }
+    case 'UPDATE_ENABLED':
+      return {
+        ...state,
+        enabled: action.payload,
+      }
     default:
       return state
   }

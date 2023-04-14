@@ -25,10 +25,17 @@ const useUpdateCursorify = () => {
     })
   }
 
-  const updatedefaultCursorVisible = (defaultCursorVisible: boolean) => {
+  const updateDefaultCursorVisible = (defaultCursorVisible: boolean) => {
     dispatch({
       type: 'UPDATE_VISIBLE_DEFAULT_CURSOR',
       payload: defaultCursorVisible,
+    })
+  }
+
+  const updateEnabled = (enabled: boolean) => {
+    dispatch({
+      type: 'UPDATE_ENABLED',
+      payload: enabled,
     })
   }
 
@@ -36,7 +43,8 @@ const useUpdateCursorify = () => {
     updateCursor,
     updateDelay,
     updateOpacity,
-    updatedefaultCursorVisible,
+    updateDefaultCursorVisible,
+    updateEnabled,
   }
 }
 

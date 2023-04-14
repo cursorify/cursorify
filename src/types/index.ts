@@ -7,6 +7,7 @@ export type CusorifyStateType = {
   delay: number
   opacity: number
   defaultCursorVisible: boolean
+  enabled: boolean
 }
 
 export type CursorProps = {
@@ -75,5 +76,9 @@ export type CursorifyReducerActionType =
     }
   | {
       type: 'UPDATE_VISIBLE_DEFAULT_CURSOR'
+      payload: boolean
+    }
+  | {
+      type: 'UPDATE_ENABLED'
       payload: boolean
     }
