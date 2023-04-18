@@ -3,11 +3,11 @@ import { createContext, Dispatch, useContext } from 'react'
 import { defaultCursorifyState } from '../../constants'
 import useCursorifyReducer from './hooks/useCursorifyReducer'
 import { CursorifyReducerActionType, CusorifyStateType } from '../../types'
-import { CircleCursor } from '../../cursors'
 import useDefaultCursorVisibleEffect from './hooks/useDefaultCursorVisibleEffect'
 import useRouteChangeEffect from './hooks/useRouteChangeEffect'
 import useMouseStateEffect from './hooks/useMouseStateEffect'
 import Cursorify from './Cursorify'
+import { DefaultCursor } from '../DefaultCursor'
 
 const CursorifyStateContext = createContext<CusorifyStateType>(
   defaultCursorifyState
@@ -26,7 +26,7 @@ type Props = PropsWithChildren<{
 
 export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
   const {
-    cursor = <CircleCursor />,
+    cursor = <DefaultCursor />,
     delay = 1,
     opacity = 1,
     defaultCursorVisible = false,
