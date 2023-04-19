@@ -1,6 +1,6 @@
 {
-  "name": "react-cursorify",
-  "version": "1.1.1287",
+  "name": "@cursorify/react",
+  "version": "0.0.1",
   "homepage": "https://morethanmin.github.io/react-cursorify",
   "description": "Customizable cursor component for any style 🕹️",
   "author": "Lee Sang Min",
