@@ -4,7 +4,7 @@
 
 Customizable cursor component for any style. 🕹️
 
-[Website](https://morethanmin.github.io/react-cursorify)
+[Website](https://cursorify.github.io/)
 
 # Getting Started
 
@@ -17,13 +17,13 @@ You can install react-cursorify in your React project using the two commands bel
 via npm:
 
 ```zsh
-npm install react-cursorify
+npm install @cursorify/react
 ```
 
 or via yarn:
 
 ```zsh
-yarn add react-cursorify
+yarn add @cursorify/react
 ```
 
 ## Apply to your react project
@@ -31,7 +31,7 @@ yarn add react-cursorify
 To apply react-cursorify, simply wrap your React project with `CursorifyProvider`. It's easy, right?
 
 ```tsx
-import { CursorifyProvider } from 'react-cursorify'
+import { CursorifyProvider } from '@cursorify/react'
 
 const App = () => {
   return (
@@ -56,7 +56,7 @@ Refer to the description of each option below.
 - visibleDefaultCursor: You can pass a boolean.
 
 ```tsx
-import { CursorifyProvider, EmojiCursor } from 'react-cursorify'
+import { CursorifyProvider, EmojiCursor } from '@cursorify/react'
 
 const App = () => {
   return (
@@ -76,7 +76,7 @@ export default App
 
 ## More info
 
-For more details, please refer to the [Docs](https://morethanmin.github.io/react-cursorify/).
+For more details, please refer to the [Docs](https://cursorify.github.io//).
 
 ## Cursor
 
