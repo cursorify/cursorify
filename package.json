@@ -1,6 +1,6 @@
 {
   "name": "@cursorify/react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://morethanmin.github.io/react-cursorify",
   "description": "Customizable cursor component for any style 🕹️",
   "author": "Lee Sang Min",
@@ -18,16 +18,12 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6"
-  },
   "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.10.0",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
     "typescript": "^5.0.2"
   }
 }

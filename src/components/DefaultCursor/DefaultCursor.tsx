@@ -1,5 +1,5 @@
 import React from 'react'
-import useCursorify from '../../hooks/useCursorify'
+import { useCursorify } from '../../hooks/useCursorify'
 import { CursorProps } from '../../types'
 
 const DefaultCursor: React.FC<CursorProps> = ({ disabled }) => {

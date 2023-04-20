@@ -1,6 +1,6 @@
-import { useCursorifyState } from '../components/CursorifyProvider/CursorifyProvider'
+import { useCursorifyState } from '../components/CursorifyProvider'
 
-const useCursorify = () => {
+export const useCursorify = () => {
   const state = useCursorifyState()
 
   return {
@@ -8,5 +8,3 @@ const useCursorify = () => {
     mouseState: state.mouseState,
   }
 }
-
-export default useCursorify
