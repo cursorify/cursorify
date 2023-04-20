@@ -1,1 +1,1 @@
-export { default as DefaultCursor } from './DefaultCursor'
+export * from './DefaultCursor'

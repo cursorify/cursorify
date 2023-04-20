@@ -2,7 +2,7 @@ import React from 'react'
 import { useCursorify } from '../../hooks/useCursorify'
 import { CursorProps } from '../../types'
 
-const DefaultCursor: React.FC<CursorProps> = ({ disabled }) => {
+export const DefaultCursor: React.FC<CursorProps> = ({ disabled }) => {
   const { hoverState } = useCursorify()
 
   return (
@@ -23,5 +23,3 @@ const DefaultCursor: React.FC<CursorProps> = ({ disabled }) => {
     />
   )
 }
-
-export default DefaultCursor
