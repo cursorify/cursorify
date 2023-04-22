@@ -4,13 +4,13 @@ import { CursorifyReducerActionType } from '../../../types'
 const useMouseStateEffect = (
   dispatch: Dispatch<CursorifyReducerActionType>
 ) => {
-  const handleMouseDown = (e: MouseEvent) => {
+  const handleMouseDown = () => {
     dispatch({
       type: 'UPDATE_MOUSE_STATE',
       payload: 'mouseDown',
     })
   }
-  const handleMouseUp = (e: MouseEvent) => {
+  const handleMouseUp = () => {
     dispatch({
       type: 'UPDATE_MOUSE_STATE',
       payload: 'default',

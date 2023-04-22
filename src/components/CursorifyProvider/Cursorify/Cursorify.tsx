@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useRef } from 'react'
+import { FC, PropsWithChildren, useRef } from 'react'
 import useMouseMoveEffect from './useMouseMoveEffect'
 import { useCursorifyState } from '../CursorifyProvider'
 

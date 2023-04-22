@@ -4,7 +4,7 @@ import { defaultCursorifyState } from '../../constants'
 import useCursorifyReducer from './hooks/useCursorifyReducer'
 import { CursorifyReducerActionType, CusorifyStateType } from '../../types'
 import useDefaultCursorVisibleEffect from './hooks/useDefaultCursorVisibleEffect'
-import useRouteChangeEffect from './hooks/useRouteChangeEffect'
+// import useRouteChangeEffect from './hooks/useRouteChangeEffect'
 import useMouseStateEffect from './hooks/useMouseStateEffect'
 import Cursorify from './Cursorify'
 import { DefaultCursor } from '../DefaultCursor'
@@ -41,7 +41,7 @@ export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
     enabled,
   })
   useDefaultCursorVisibleEffect(state.defaultCursorVisible)
-  useRouteChangeEffect(dispatch)
+  // useRouteChangeEffect(dispatch)
   useMouseStateEffect(dispatch)
 
   return (

@@ -1,4 +1,7 @@
 src
-website
 .vscode
 .github
+index.html
+vite.config.ts
+tsconfig.json
+tscnofig.node.json

@@ -1,6 +1,6 @@
 {
   "name": "@cursorify/react",
-  "version": "0.0.3",
+  "version": "0.0.32",
   "homepage": "https://cursorify.github.io/",
   "description": "Customizable cursor component for any style 🕹️",
   "author": "Lee Sang Min",
@@ -16,14 +16,18 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "dev": "vite",
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "vite": "^4.3.1"
   }
 }
