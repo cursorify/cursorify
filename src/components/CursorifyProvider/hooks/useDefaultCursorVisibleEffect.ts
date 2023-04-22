@@ -4,8 +4,8 @@ const useDefaultCursorVisibleEffect = (defaultCursorVisible: boolean) => {
   useEffect(() => {
     const style = document.createElement('style')
     style.innerHTML = defaultCursorVisible
-    ? ``
-    : `
+      ? ``
+      : `
       * {
         cursor: none !important;
       }

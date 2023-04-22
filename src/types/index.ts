@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 export type CusorifyStateType = {
-  hoverState: HoverState
+  cursorStyle: CursorStyle
   mouseState: MouseState
   cursor: ReactNode
   delay: number
@@ -14,7 +14,7 @@ export type CursorProps = {
   disabled?: boolean
 }
 
-export type HoverState =
+export type CursorStyle =
   | 'auto'
   | 'default'
   | 'none'
@@ -55,8 +55,8 @@ export type HoverState =
 export type MouseState = 'default' | 'mouseDown'
 export type CursorifyReducerActionType =
   | {
-      type: 'UPDATE_HOVER_STATE'
-      payload: HoverState
+      type: 'UPDATE_STYLE'
+      payload: CursorStyle
     }
   | {
       type: 'UPDATE_MOUSE_STATE'

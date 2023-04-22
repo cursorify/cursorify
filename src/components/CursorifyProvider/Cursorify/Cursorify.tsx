@@ -1,15 +1,10 @@
 import { FC, PropsWithChildren, useRef } from 'react'
 import useMouseMoveEffect from './useMouseMoveEffect'
-import { useCursorifyState } from '../CursorifyProvider'
 
-// ref를 cursor에서 넣었을 때 문제점
-// 1. 스타일 적용
-// 2.
 const Cursorify: FC<PropsWithChildren<any>> = ({ children }) => {
-  const { delay, opacity } = useCursorifyState()
   const ref = useRef<HTMLDivElement>(null)
 
-  useMouseMoveEffect(ref, delay, opacity)
+  useMouseMoveEffect(ref)
 
   return (
     <div

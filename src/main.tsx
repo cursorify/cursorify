@@ -5,15 +5,12 @@ import { CursorifyProvider } from '.'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <CursorifyProvider>
-      <h1>cursorify test</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <h1>Cursorify</h1>
+      <div style={{ cursor: 'pointer' }}>
+        1 div
+        <div>2div</div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <a>link</a>
     </CursorifyProvider>
   </React.StrictMode>
 )

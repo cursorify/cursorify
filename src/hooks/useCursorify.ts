@@ -4,7 +4,7 @@ export const useCursorify = () => {
   const state = useCursorifyState()
 
   return {
-    hoverState: state.hoverState,
+    style: state.cursorStyle,
     mouseState: state.mouseState,
   }
 }

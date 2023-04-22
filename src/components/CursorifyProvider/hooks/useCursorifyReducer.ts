@@ -6,10 +6,10 @@ const reducer: Reducer<CusorifyStateType, CursorifyReducerActionType> = (
   action
 ) => {
   switch (action.type) {
-    case 'UPDATE_HOVER_STATE':
+    case 'UPDATE_STYLE':
       return {
         ...state,
-        hoverState: action.payload,
+        cursorStyle: action.payload,
       }
     case 'UPDATE_MOUSE_STATE':
       return {

@@ -1,10 +1,30 @@
 import React, { RefObject, useEffect, useRef } from 'react'
+import { useCursorifyDispatch, useCursorifyState } from '..'
+import { CursorStyle } from '../../..'
 
-const useMouseMoveEffect = (
-  mouseRef: RefObject<HTMLDivElement>,
-  delay: number,
-  opacity: number
-) => {
+/*
+const getCursorStyleFromTagName = (tagName: string): CursorStyle => {
+  switch (tagName) {
+    case 'A':
+      return 'pointer'
+    case 'P':
+    case 'H1':
+    case 'H2':
+    case 'H3':
+    case 'H4':
+    case 'H5':
+    case 'H6':
+    case 'SPAN':
+      return 'text'
+    default:
+      return 'default'
+  }
+}
+*/
+
+const useMouseMoveEffect = (mouseRef: RefObject<HTMLDivElement>) => {
+  const { delay, opacity } = useCursorifyState()
+  const dispatch = useCursorifyDispatch()
   const endX = useRef(0)
   const endY = useRef(0)
 
@@ -24,9 +44,8 @@ const useMouseMoveEffect = (
     requestRef.current = requestAnimationFrame(animateMouse)
   }
 
-  const handleMouseMove: (this: Window, ev: MouseEvent) => any = (e) => {
+  const handleMouseMove: (e: MouseEvent) => void = (e) => {
     if (mouseRef.current === null) return
-    mouseRef.current.style.opacity = `${opacity}`
 
     endX.current = e.clientX
     endY.current = e.clientY
@@ -34,9 +53,27 @@ const useMouseMoveEffect = (
     if (_x.current === null || _y.current === null) {
       _x.current = endX.current
       _y.current = endY.current
-
+      mouseRef.current.style.opacity = `${opacity}`
       mouseRef.current.style.transform = `translate(-50%, -50%) translate3d(${_x.current}px, ${_y.current}px, 0)`
     }
+
+    if (!(e.target instanceof HTMLElement)) return
+
+    let cursorStyle: CursorStyle = 'default'
+    let currentElement: HTMLElement | null = e.target
+    while (currentElement) {
+      const _cursorStyle = currentElement.style.cursor
+      if (_cursorStyle) {
+        cursorStyle = _cursorStyle as CursorStyle
+        break
+      }
+      currentElement = currentElement.parentElement
+    }
+
+    dispatch({
+      type: 'UPDATE_STYLE',
+      payload: cursorStyle,
+    })
   }
 
   useEffect(() => {

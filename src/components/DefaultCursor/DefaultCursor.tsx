@@ -3,7 +3,7 @@ import { useCursorify } from '../../hooks/useCursorify'
 import { CursorProps } from '../../types'
 
 export const DefaultCursor: React.FC<CursorProps> = ({ disabled }) => {
-  const { hoverState } = useCursorify()
+  const { style } = useCursorify()
 
   return (
     <div
@@ -14,11 +14,10 @@ export const DefaultCursor: React.FC<CursorProps> = ({ disabled }) => {
         transition:
           'opacity 0.1s ease-in-out, transform 0.1s ease-in-out, background-color 0.1s ease-in-out',
         backgroundColor:
-          !disabled && hoverState === 'pointer'
+          !disabled && style === 'pointer'
             ? 'rgba(210, 210, 210, 0.4)'
             : 'rgba(210, 210, 210, 0.8)',
-        transform:
-          !disabled && hoverState === 'pointer' ? 'scale(2.3)' : 'scale(1)',
+        transform: !disabled && style === 'pointer' ? 'scale(2.3)' : 'scale(1)',
       }}
     />
   )

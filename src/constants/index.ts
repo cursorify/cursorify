@@ -1,7 +1,7 @@
 import { CusorifyStateType } from '../types'
 
 export const defaultCursorifyState: CusorifyStateType = {
-  hoverState: 'default',
+  cursorStyle: 'default',
   mouseState: 'default',
   cursor: (() => null)(),
   delay: 1,
