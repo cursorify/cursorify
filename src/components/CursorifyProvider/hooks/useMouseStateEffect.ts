@@ -1,9 +1,9 @@
-import { Dispatch, useEffect } from 'react'
-import { CursorifyReducerActionType } from '../../../types'
+import { useEffect } from 'react'
+import { useCursorifyDispatch } from '..'
 
-const useMouseStateEffect = (
-  dispatch: Dispatch<CursorifyReducerActionType>
-) => {
+const useMouseStateEffect = () => {
+  const dispatch = useCursorifyDispatch()
+
   const handleMouseDown = () => {
     dispatch({
       type: 'UPDATE_MOUSE_STATE',

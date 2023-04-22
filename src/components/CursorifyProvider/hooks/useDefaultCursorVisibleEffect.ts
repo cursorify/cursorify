@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
+import { useCursorifyState } from '..'
 
-const useDefaultCursorVisibleEffect = (defaultCursorVisible: boolean) => {
+const useDefaultCursorVisibleEffect = () => {
+  const { defaultCursorVisible } = useCursorifyState()
+
   useEffect(() => {
     const style = document.createElement('style')
     style.innerHTML = defaultCursorVisible
