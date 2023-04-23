@@ -7,7 +7,7 @@ export type CusorifyStateType = {
   delay: number
   opacity: number
   defaultCursorVisible: boolean
-  enabled: boolean
+  breakpoint: number
 }
 
 export type CursorProps = {

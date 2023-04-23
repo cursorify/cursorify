@@ -1,12 +1,20 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
+import React, { PropsWithChildren } from 'react'
 import { createContext, Dispatch, useContext } from 'react'
-import { defaultCursorifyState } from '../../constants'
 import useCursorifyReducer from './hooks/useCursorifyReducer'
 import { CursorifyReducerActionType, CusorifyStateType } from '../../types'
-import useDefaultCursorVisibleEffect from './hooks/useDefaultCursorVisibleEffect'
-import useMouseStateEffect from './hooks/useMouseStateEffect'
 import Cursorify from './Cursorify'
 import { DefaultCursor } from '../DefaultCursor'
+import useBreakpoint from './hooks/useBreakpoint'
+
+const defaultCursorifyState: CusorifyStateType = {
+  cursor: <DefaultCursor />,
+  delay: 1,
+  opacity: 1,
+  defaultCursorVisible: false,
+  breakpoint: 0,
+  cursorStyle: 'default',
+  mouseState: 'default',
+}
 
 const CursorifyStateContext = createContext<CusorifyStateType>(
   defaultCursorifyState
@@ -16,36 +24,24 @@ const CursorifyDispatchContext =
   createContext<Dispatch<CursorifyReducerActionType> | null>(null)
 
 type Props = PropsWithChildren<{
-  cursor?: ReactNode
-  opacity?: number
-  delay?: number
-  defaultCursorVisible?: boolean
-  enabled?: boolean
+  cursor?: CusorifyStateType['cursor']
+  delay?: CusorifyStateType['delay']
+  opacity?: CusorifyStateType['opacity']
+  defaultCursorVisible?: CusorifyStateType['defaultCursorVisible']
+  breakpoint?: CusorifyStateType['breakpoint']
 }>
 
 export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
-  const {
-    cursor = <DefaultCursor />,
-    delay = 1,
-    opacity = 1,
-    defaultCursorVisible = false,
-    enabled = true,
-  } = props
   const [state, dispatch] = useCursorifyReducer({
     ...defaultCursorifyState,
-    cursor,
-    delay,
-    opacity,
-    defaultCursorVisible,
-    enabled,
+    ...props,
   })
-  useDefaultCursorVisibleEffect()
-  useMouseStateEffect()
 
+  const enabled = useBreakpoint(state.breakpoint)
   return (
     <CursorifyStateContext.Provider value={state}>
       <CursorifyDispatchContext.Provider value={dispatch}>
-        {state.enabled && <Cursorify>{state.cursor}</Cursorify>}
+        {enabled && <Cursorify>{state.cursor}</Cursorify>}
         {children}
       </CursorifyDispatchContext.Provider>
     </CursorifyStateContext.Provider>

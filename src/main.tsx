@@ -4,7 +4,7 @@ import { CursorifyProvider } from '.'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <CursorifyProvider>
+    <CursorifyProvider breakpoint={1000}>
       <h1>Cursorify</h1>
       <div style={{ cursor: 'pointer' }}>
         1 div

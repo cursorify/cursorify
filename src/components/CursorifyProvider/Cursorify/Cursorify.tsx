@@ -1,10 +1,14 @@
 import { FC, PropsWithChildren, useRef } from 'react'
 import useMouseMoveEffect from './useMouseMoveEffect'
+import useMouseStateEffect from './useMouseStateEffect'
+import useDefaultCursorVisibleEffect from './useDefaultCursorVisibleEffect'
 
 const Cursorify: FC<PropsWithChildren<any>> = ({ children }) => {
   const ref = useRef<HTMLDivElement>(null)
 
   useMouseMoveEffect(ref)
+  useDefaultCursorVisibleEffect()
+  useMouseStateEffect()
 
   return (
     <div
