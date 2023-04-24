@@ -54,6 +54,7 @@ Refer to the description of each option below.
 - delay: You can pass a number between 1 and 10.
 - opacity: You can pass a number between 0 and 1.
 - visibleDefaultCursor: You can pass a boolean.
+- breakpoint: You can set breakpoint to disable in mobile size.
 
 ```tsx
 import { CursorifyProvider, EmojiCursor } from '@cursorify/react'
@@ -65,6 +66,7 @@ const App = () => {
       delay={2}
       opacity={0.7}
       visibleDefaultCursor={false}
+      breakpoint={997}
     >
       <>{/*....your component */}</>
     </CursorifyProvider>
