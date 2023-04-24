@@ -76,7 +76,7 @@ export default App
 
 ## More info
 
-For more details, please refer to the [Docs](https://cursorify.github.io//).
+For more details, please refer to the [Docs](https://cursorify.github.io/).
 
 ## Cursor
 
