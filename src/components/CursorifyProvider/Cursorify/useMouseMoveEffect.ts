@@ -39,6 +39,7 @@ const useMouseMoveEffect = (mouseRef: RefObject<HTMLDivElement>) => {
       _x.current += (endX.current - _x.current) / delay
       _y.current += (endY.current - _y.current) / delay
     }
+    mouseRef.current.style.opacity = `${opacity}`
     mouseRef.current.style.transform = `translate(-50%, -50%) translate3d(${_x.current}px, ${_y.current}px, 0)`
 
     requestRef.current = requestAnimationFrame(animateMouse)
@@ -81,8 +82,8 @@ const useMouseMoveEffect = (mouseRef: RefObject<HTMLDivElement>) => {
     animateMouse()
     window.addEventListener('mousemove', handleMouseMove)
     return () => {
-      cancelAnimationFrame(requestRef.current)
       window.removeEventListener('mousemove', handleMouseMove)
+      cancelAnimationFrame(requestRef.current)
     }
   }, [delay, opacity])
 
