@@ -29,19 +29,20 @@ type Props = PropsWithChildren<{
   opacity?: CusorifyStateType['opacity']
   defaultCursorVisible?: CusorifyStateType['defaultCursorVisible']
   breakpoint?: CusorifyStateType['breakpoint']
+  enabled?: boolean
 }>
 
-export const CursorifyProvider: React.FC<Props> = ({ children, ...props }) => {
+export const CursorifyProvider: React.FC<Props> = ({ children, enabled, ...props }) => {
   const [state, dispatch] = useCursorifyReducer({
     ...defaultCursorifyState,
     ...props,
   })
 
-  const enabled = useBreakpoint(state.breakpoint)
+  const breakpointEnabled = useBreakpoint(state.breakpoint)
   return (
     <CursorifyStateContext.Provider value={state}>
       <CursorifyDispatchContext.Provider value={dispatch}>
-        {enabled && <Cursorify>{state.cursor}</Cursorify>}
+        {enabled && breakpointEnabled && <Cursorify>{state.cursor}</Cursorify>}
         {children}
       </CursorifyDispatchContext.Provider>
     </CursorifyStateContext.Provider>
