@@ -21,6 +21,7 @@ export type CursorStyle =
   | 'contextMenu'
   | 'help'
   | 'pointer'
+  | 'click'
   | 'progress'
   | 'wait'
   | 'cell'

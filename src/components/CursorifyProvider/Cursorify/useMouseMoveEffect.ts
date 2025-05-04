@@ -45,6 +45,20 @@ const useMouseMoveEffect = (mouseRef: RefObject<HTMLDivElement | null>) => {
     requestRef.current = requestAnimationFrame(animateMouse)
   }
 
+  const handleMouseClick = () => {
+    dispatch({
+      type: "UPDATE_STYLE",
+      payload: "click",
+    });
+  };
+
+  const handleMouseRelease = () => {
+    dispatch({
+      type: "UPDATE_STYLE",
+      payload: "default",
+    });
+  };
+
   const handleMouseMove: (e: MouseEvent) => void = (e) => {
     if (mouseRef.current === null) return
 
@@ -81,8 +95,12 @@ const useMouseMoveEffect = (mouseRef: RefObject<HTMLDivElement | null>) => {
     if (!mouseRef.current) return
     animateMouse()
     window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener("mousedown", handleMouseClick)
+    window.addEventListener("mouseup", handleMouseRelease)
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener("mousedown", handleMouseClick)
+      window.removeEventListener("mouseup", handleMouseRelease)
       cancelAnimationFrame(requestRef.current)
     }
   }, [delay, opacity])
