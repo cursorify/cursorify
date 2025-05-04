@@ -22,7 +22,7 @@ const getCursorStyleFromTagName = (tagName: string): CursorStyle => {
 }
 */
 
-const useMouseMoveEffect = (mouseRef: RefObject<HTMLDivElement>) => {
+const useMouseMoveEffect = (mouseRef: RefObject<HTMLDivElement | null>) => {
   const { delay, opacity } = useCursorifyState()
   const dispatch = useCursorifyDispatch()
   const endX = useRef(0)

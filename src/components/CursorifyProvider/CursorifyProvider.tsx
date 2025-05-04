@@ -1,12 +1,16 @@
-import React, { PropsWithChildren } from 'react'
-import { createContext, Dispatch, useContext } from 'react'
-import useCursorifyReducer from './hooks/useCursorifyReducer'
-import { CursorifyReducerActionType, CusorifyStateType } from '../../types'
-import Cursorify from './Cursorify'
+import React, {
+  createContext,
+  Dispatch,
+  PropsWithChildren,
+  useContext,
+} from 'react'
+import { CursorifyReducerActionType, CursorifyStateType } from '../../types'
 import { DefaultCursor } from '../DefaultCursor'
+import Cursorify from './Cursorify'
 import useBreakpoint from './hooks/useBreakpoint'
+import useCursorifyReducer from './hooks/useCursorifyReducer'
 
-const defaultCursorifyState: CusorifyStateType = {
+const defaultCursorifyState: CursorifyStateType = {
   cursor: <DefaultCursor />,
   delay: 1,
   opacity: 1,
@@ -16,7 +20,7 @@ const defaultCursorifyState: CusorifyStateType = {
   mouseState: 'default',
 }
 
-const CursorifyStateContext = createContext<CusorifyStateType>(
+const CursorifyStateContext = createContext<CursorifyStateType>(
   defaultCursorifyState
 )
 
@@ -24,15 +28,19 @@ const CursorifyDispatchContext =
   createContext<Dispatch<CursorifyReducerActionType> | null>(null)
 
 type Props = PropsWithChildren<{
-  cursor?: CusorifyStateType['cursor']
-  delay?: CusorifyStateType['delay']
-  opacity?: CusorifyStateType['opacity']
-  defaultCursorVisible?: CusorifyStateType['defaultCursorVisible']
-  breakpoint?: CusorifyStateType['breakpoint']
+  cursor?: CursorifyStateType['cursor']
+  delay?: CursorifyStateType['delay']
+  opacity?: CursorifyStateType['opacity']
+  defaultCursorVisible?: CursorifyStateType['defaultCursorVisible']
+  breakpoint?: CursorifyStateType['breakpoint']
   enabled?: boolean
 }>
 
-export const CursorifyProvider: React.FC<Props> = ({ children, enabled, ...props }) => {
+export const CursorifyProvider: React.FC<Props> = ({
+  children,
+  enabled,
+  ...props
+}) => {
   const [state, dispatch] = useCursorifyReducer({
     ...defaultCursorifyState,
     ...props,

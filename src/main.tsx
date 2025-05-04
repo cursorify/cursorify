@@ -1,10 +1,10 @@
-import React, { ChangeEventHandler, useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { CursorifyProvider, useCursorifyState, useUpdateCursorify } from '.'
 
 const AppContainer = () => {
   return (
-    <CursorifyProvider breakpoint={1000}>
+    <CursorifyProvider enabled breakpoint={1000}>
       <App />
     </CursorifyProvider>
   )

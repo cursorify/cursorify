@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type CusorifyStateType = {
+export type CursorifyStateType = {
   cursorStyle: CursorStyle
   mouseState: MouseState
   cursor: ReactNode

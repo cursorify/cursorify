@@ -1,4 +1,4 @@
-# react-cursorify
+# cursorify
 
 ![react-cursorify-social-card](https://user-images.githubusercontent.com/72514247/227773776-762fbd64-1662-4d01-8049-9fee079cf717.png)
 
